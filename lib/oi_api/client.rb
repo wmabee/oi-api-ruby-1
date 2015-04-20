@@ -54,7 +54,8 @@ module OiApi
 
     def default_header_options
       {
-        'Content-Type' => content_type
+        'Content-Type' => content_type,
+        'User-Agent' => user_agent
       }
     end
 
