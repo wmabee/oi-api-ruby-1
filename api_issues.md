@@ -31,7 +31,7 @@ This is a problem when trying to run automated tests against the API. Ideally, e
 
 When various operations are carried out on id's that do not exist, there are many inconsistencies in the various responses:
 
-### PUT /advertisers/9999999999999/ 
+#### PUT /advertisers/9999999999999/ 
 
 Currently returns:
   * HTTP status code: 400
@@ -43,7 +43,7 @@ More appropriate and consistent would be:
   * message: 'Record not found'
   * status: 'error'
 
-### GET /advertisers/9999999999999/
+#### GET /advertisers/9999999999999/
 
 Currently returns:
   * HTTP status code: 400
@@ -55,7 +55,7 @@ More appropriate and consistent would be:
   * message: 'Record not found'
   * status: 'error'
 
-### DELETE /advertisers/9999999999999/
+#### DELETE /advertisers/9999999999999/
 
 Currently returns:
   * HTTP status code: 403
