@@ -5,19 +5,23 @@ module OiApi
     module Advertisers
 
       def advertisers(options = {})
-        self.class.get '/advertisers/', options_with_basic_auth(options)
+        get '/advertisers/', options
       end
 
       def advertiser(advertiser_id, options = {})
-        self.class.get "/advertisers/#{advertiser_id}/", options_with_basic_auth(options)
+        get "/advertisers/#{advertiser_id}/", options
       end
 
       def create_advertiser(options = {})
-        self.class.post '/advertisers/', options_with_basic_auth(options)
+        post '/advertisers/', options
       end
 
       def update_advertiser(advertiser_id, options = {})
-        self.class.put "/advertisers/#{advertiser_id}/", options_with_basic_auth(options)
+        put "/advertisers/#{advertiser_id}/", options
+      end
+
+      def delete_advertiser(advertiser_id, options = {})
+        delete "/advertisers/#{advertiser_id}/", options
       end
 
     end

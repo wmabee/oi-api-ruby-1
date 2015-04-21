@@ -2,6 +2,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'oi_api/version'
+require 'safe_yaml'
 
 Gem::Specification.new do |spec|
   spec.name          = 'oi-api-ruby'
@@ -21,10 +22,13 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake', '~> 10.4.2'
   spec.add_development_dependency 'pry', '~> 0.10.1'
+  spec.add_development_dependency 'minitest', '~> 5.6.0'
   spec.add_development_dependency 'vcr', '~> 2.9.3'
   spec.add_development_dependency 'minitest-vcr', '~> 1.3.0'
   spec.add_development_dependency 'minitest-focus', '~> 1.1.1'
+  spec.add_development_dependency 'minitest-reporters', '~> 1.0.11'
   spec.add_development_dependency 'webmock', '~> 1.21.0'
+
 
   spec.add_dependency 'httparty', '~> 0.13.3'
 end

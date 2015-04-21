@@ -15,7 +15,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 21 Apr 2015 20:26:33 GMT
+      - Tue, 21 Apr 2015 21:35:53 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,13 +34,13 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Tue, 21 Apr 2015 20:28:04 GMT
+  recorded_at: Tue, 21 Apr 2015 21:37:24 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
     body:
       encoding: UTF-8
-      string: name=new%20advertiser%205b9abe2ee527a72ad548d593d723e697&status_id=1&category_id=1010
+      string: name=new%20advertiser%20345e6857e55ea6eb9eea1f85debbbdcc&status_id=1&category_id=1010
     headers:
       User-Agent:
       - OiApiRuby Gem 0.0.1
@@ -50,7 +50,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Tue, 21 Apr 2015 20:26:33 GMT
+      - Tue, 21 Apr 2015 21:35:54 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -68,45 +68,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 39446}'
+        created", "id": 39452}'
     http_version: 
-  recorded_at: Tue, 21 Apr 2015 20:28:04 GMT
-- request:
-    method: post
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
-    body:
-      encoding: UTF-8
-      string: name=new%20advertiser%20940af6c6be3280bcc84819b53a2d5b81&status_id=1&category_id=1010
-    headers:
-      User-Agent:
-      - OiApiRuby Gem 0.0.1
-  response:
-    status:
-      code: 201
-      message: CREATED
-    headers:
-      Date:
-      - Tue, 21 Apr 2015 20:26:34 GMT
-      Server:
-      - Apache/2.2.15 (CentOS)
-      Vary:
-      - Accept,Cookie
-      X-Frame-Options:
-      - SAMEORIGIN
-      Allow:
-      - GET, POST, HEAD, OPTIONS
-      Connection:
-      - close
-      Transfer-Encoding:
-      - chunked
-      Content-Type:
-      - application/json
-    body:
-      encoding: UTF-8
-      string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 39447}'
-    http_version: 
-  recorded_at: Tue, 21 Apr 2015 20:28:05 GMT
+  recorded_at: Tue, 21 Apr 2015 21:37:25 GMT
 - request:
     method: get
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
@@ -122,7 +86,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 21 Apr 2015 20:26:34 GMT
+      - Tue, 21 Apr 2015 21:35:54 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -139,11 +103,45 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"id": 39447, "name": "new advertiser 940af6c6be3280bcc84819b53a2d5b81",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-21T16:28:05",
-        "modify_date": "2015-04-21T16:28:05"}, {"id": 39446, "name": "new advertiser
-        5b9abe2ee527a72ad548d593d723e697", "status_id": 1, "category_id": 1010, "key":
-        "", "create_date": "2015-04-21T16:28:04", "modify_date": "2015-04-21T16:28:04"}]'
+      string: '[{"id": 39452, "name": "new advertiser 345e6857e55ea6eb9eea1f85debbbdcc",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-21T17:37:24",
+        "modify_date": "2015-04-21T17:37:24"}]'
     http_version: 
-  recorded_at: Tue, 21 Apr 2015 20:28:05 GMT
+  recorded_at: Tue, 21 Apr 2015 21:37:25 GMT
+- request:
+    method: delete
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39452/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - OiApiRuby Gem 0.0.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 21 Apr 2015 21:35:54 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, PUT, DELETE, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
+        deleted"}'
+    http_version: 
+  recorded_at: Tue, 21 Apr 2015 21:37:25 GMT
 recorded_with: VCR 2.9.3

@@ -43,6 +43,22 @@ module OiApi
       self.class.format(format)
     end
 
+    def get(url, options = {})
+      self.class.get url, options_with_basic_auth(options)
+    end
+
+    def post(url, options = {})
+      self.class.post url, options_with_basic_auth(options)
+    end
+
+    def put(url, options = {})
+      self.class.put url, options_with_basic_auth(options)
+    end
+
+    def delete(url, options = {})
+      self.class.delete url, options_with_basic_auth(options)
+    end
+
     private
 
     def basic_auth_options
@@ -54,7 +70,8 @@ module OiApi
 
     def default_header_options
       {
-        'Content-Type' => content_type,
+        # API_ISSUES: setting 'content_type' header causes create_advertiser to return 'unknown error'
+        #'Content-Type' => content_type,
         'User-Agent' => user_agent
       }
     end

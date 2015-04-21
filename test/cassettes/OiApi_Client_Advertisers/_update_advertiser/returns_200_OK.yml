@@ -15,7 +15,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 21 Apr 2015 21:11:56 GMT
+      - Tue, 21 Apr 2015 21:11:58 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -42,10 +42,10 @@ http_interactions:
         "2015-04-21T16:42:19"}, {"id": 39446, "name": "new advertiser 5b9abe2ee527a72ad548d593d723e697",
         "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-21T16:28:04",
         "modify_date": "2015-04-21T16:28:04"}, {"id": 39448, "name": "new advertiser
-        a39807c6bae587b58e3353ef426f6f35", "status_id": 1, "category_id": 1010, "key":
-        "", "create_date": "2015-04-21T16:38:59", "modify_date": "2015-04-21T16:38:59"}]'
+        a39807c6bae587b58e3353ef426f6f35", "status_id": 2, "category_id": 1010, "key":
+        "", "create_date": "2015-04-21T16:38:59", "modify_date": "2015-04-21T17:13:28"}]'
     http_version: 
-  recorded_at: Tue, 21 Apr 2015 21:13:27 GMT
+  recorded_at: Tue, 21 Apr 2015 21:13:28 GMT
 - request:
     method: get
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
@@ -61,7 +61,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 21 Apr 2015 21:11:57 GMT
+      - Tue, 21 Apr 2015 21:11:58 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -88,10 +88,10 @@ http_interactions:
         "2015-04-21T16:42:19"}, {"id": 39446, "name": "new advertiser 5b9abe2ee527a72ad548d593d723e697",
         "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-21T16:28:04",
         "modify_date": "2015-04-21T16:28:04"}, {"id": 39448, "name": "new advertiser
-        a39807c6bae587b58e3353ef426f6f35", "status_id": 1, "category_id": 1010, "key":
-        "", "create_date": "2015-04-21T16:38:59", "modify_date": "2015-04-21T16:38:59"}]'
+        a39807c6bae587b58e3353ef426f6f35", "status_id": 2, "category_id": 1010, "key":
+        "", "create_date": "2015-04-21T16:38:59", "modify_date": "2015-04-21T17:13:28"}]'
     http_version: 
-  recorded_at: Tue, 21 Apr 2015 21:13:28 GMT
+  recorded_at: Tue, 21 Apr 2015 21:13:29 GMT
 - request:
     method: put
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39448/
@@ -107,7 +107,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 21 Apr 2015 21:11:57 GMT
+      - Tue, 21 Apr 2015 21:11:58 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -126,5 +126,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status": "Update Successful"}'
     http_version: 
-  recorded_at: Tue, 21 Apr 2015 21:13:28 GMT
+  recorded_at: Tue, 21 Apr 2015 21:13:29 GMT
 recorded_with: VCR 2.9.3

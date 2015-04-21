@@ -1,12 +1,13 @@
 require 'oi_api'
-require 'minitest/spec'
 require 'minitest/autorun'
 require 'minitest/focus'
+require 'minitest/reporters'
 require 'minispec-metadata'
 require 'vcr'
 require 'minitest-vcr'
 require 'pry'
 require 'cgi'
+require 'securerandom'
 
 VCR.configure do |c|
   c.hook_into :webmock
@@ -23,6 +24,8 @@ end
 
 MinitestVcr::Spec.configure!
 
+Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new(color: true)]
+
 def test_oi_username
   ENV.fetch 'TEST_OI_USERNAME', 'cool_test_user_99'
 end
@@ -32,7 +35,7 @@ def test_oi_password
 end
 
 def api_client
-  OiApi.new(
+  @api_client ||= OiApi.new(
     username: test_oi_username,
     password: test_oi_password
   )

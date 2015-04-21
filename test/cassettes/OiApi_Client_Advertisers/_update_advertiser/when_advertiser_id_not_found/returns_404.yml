@@ -1,21 +1,21 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
+    method: put
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/99999999999999/
     body:
       encoding: UTF-8
-      string: name=new%20advertiser%2031bfb67e82bdee85253e08f909e4be4d&status_id=1&category_id=1010
+      string: status_id=2
     headers:
       User-Agent:
       - OiApiRuby Gem 0.0.1
   response:
     status:
-      code: 201
-      message: CREATED
+      code: 400
+      message: BAD REQUEST
     headers:
       Date:
-      - Tue, 21 Apr 2015 20:40:48 GMT
+      - Tue, 21 Apr 2015 21:37:48 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -23,7 +23,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Allow:
-      - GET, POST, HEAD, OPTIONS
+      - GET, PUT, DELETE, HEAD, OPTIONS
       Connection:
       - close
       Transfer-Encoding:
@@ -32,8 +32,7 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 39449}'
+      string: '{"status": "Update Failed", "message": "No permission to update advertiser."}'
     http_version: 
-  recorded_at: Tue, 21 Apr 2015 20:42:19 GMT
+  recorded_at: Tue, 21 Apr 2015 21:39:18 GMT
 recorded_with: VCR 2.9.3
