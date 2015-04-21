@@ -31,7 +31,9 @@ This is a problem when trying to run automated tests against the API. Ideally, e
 
 When various operations are carried out on id's that do not exist, there are many inconsistencies in the various responses:
 
-PUT to an invalid advertiser_id (ie: /advertisers/9999999999999/) currently returns:
+### PUT /advertisers/9999999999999/ 
+
+Currently returns:
   * HTTP status code: 400
   * message: 'No permission to update advertiser'
   * status: 'Update Failed'
@@ -41,9 +43,9 @@ More appropriate and consistent would be:
   * message: 'Record not found'
   * status: 'error'
 
------
+### GET /advertisers/9999999999999/
 
-GET to an invalid advertiser_id (ie: /advertisers/9999999999999/) currently returns:
+Currently returns:
   * HTTP status code: 400
   * message: 'No permission to view advertiser.' 
   * status: 'Retrieve Failed'
@@ -53,9 +55,9 @@ More appropriate and consistent would be:
   * message: 'Record not found'
   * status: 'error'
 
------
+### DELETE /advertisers/9999999999999/
 
-DELETE to an invalid advertiser_id (ie: /advertisers/9999999999999/) currently returns:
+Currently returns:
   * HTTP status code: 403
   * message: 'Operation not allowed' 
   * status: 'Request Failed'
