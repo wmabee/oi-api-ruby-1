@@ -4,6 +4,10 @@ module OiApi
 
     module Offers
 
+      def offers(options = {})
+        self.class.get("/offers/", options_with_basic_auth(options))
+      end
+
       def offer(offer_id, options = {})
         self.class.get("/offers/#{offer_id}/", options_with_basic_auth(options))
       end
@@ -14,6 +18,10 @@ module OiApi
 
       def update_offer(offer_id, options = {})
         self.class.put("/offers/#{offer_id}/", options_with_basic_auth(options))
+      end
+
+      def delete_offer(offer_id, options = {})
+        self.class.delete("/offers/#{offer_id}/", options_with_basic_auth(options))
       end
 
     end

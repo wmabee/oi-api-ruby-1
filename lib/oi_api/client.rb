@@ -70,21 +70,23 @@ module OiApi
 
     def default_header_options
       {
-        # API_ISSUES: setting 'content_type' header causes create_advertiser to return 'unknown error'
-        #'Content-Type' => content_type,
+        'Content-Type' => content_type,
         'User-Agent' => user_agent
       }
     end
 
     def options_with_basic_auth(options = {})
-      body = options.has_key?(:body) ? options[:body] : options
-      headers = options.has_key?(:headers) ? options[:headers] : {}
+      headers = options.has_key?(:headers) ? options.delete(:headers) : {}
+      body = options
 
-      {
-        body: body,
-        headers: default_header_options.merge(headers),
-        basic_auth: basic_auth_options
+      _options = {
+        basic_auth: basic_auth_options,
+        headers: default_header_options.merge(headers)
       }
+
+      _options[:body] = body.to_json unless body.empty?
+
+      _options
     end
 
   end

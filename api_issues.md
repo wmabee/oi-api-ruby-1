@@ -67,3 +67,16 @@ More appropriate and consistent would be:
   * message: 'Record not found'
   * status: 'error'
 
+## Content-type header causes unknown error when creating advertiser
+
+Setting 'Content-Type' header to 'application/json' causes create_advertiser (POST /advertisers/) to return 'unknown error' and an HTTP status code of 500.
+
+## Consider nesting and scoping offers under advertisers (ie: /advertisers/123/offers/)
+
+The API should return all offers when performing a GET to /offers/ but should return only offers for a given advertiser when scoped by advertiser_id (GET /advertisers/123/offers/).
+
+## API breaks when sending JSON
+
+The documentation calls for JSON, but setting the Content-Type header to 'application/json' and encoding POST and PUT bodies as JSON causes errors. Setting the Content-Type to 'application/x-www-form-urlencoded' and serializing the POST and PUT bodies as standard query string seems to be successful.
+
+
