@@ -47,7 +47,7 @@ RSpec.describe OiApi::Client::Advertisers do
     end
 
     it 'returns the advertiser' do
-      expect(response).to eql advertiser
+      expect(response.keys).to include *valid_advertiser_params.keys.map(&:to_s)
     end
 
     context 'when advertiser_id not found' do

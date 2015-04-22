@@ -29,7 +29,7 @@ This is a problem when trying to run automated tests against the API. Ideally, e
 
 ## HTTP Status codes inconsistent when a resource doesn't exist
 
-When various operations are carried out on id's that do not exist, there are many inconsistencies in the various responses:
+When various operations are carried out on id's that do not exist, there are many inconsistencies in the various responses. All of the endpoints below should behave consistently when carrying out a request against a resource that does not exist:
 
 #### PUT /advertisers/9999999999999/ 
 
@@ -67,16 +67,11 @@ More appropriate and consistent would be:
   * message: 'Record not found'
   * status: 'error'
 
-## Content-type header causes unknown error when creating advertiser
-
-Setting 'Content-Type' header to 'application/json' causes create_advertiser (POST /advertisers/) to return 'unknown error' and an HTTP status code of 500.
-
 ## Consider nesting and scoping offers under advertisers (ie: /advertisers/123/offers/)
 
 The API should return all offers when performing a GET to /offers/ but should return only offers for a given advertiser when scoped by advertiser_id (GET /advertisers/123/offers/).
 
-## API breaks when sending JSON
+## Typo in successful Update for offers
 
-The documentation calls for JSON, but setting the Content-Type header to 'application/json' and encoding POST and PUT bodies as JSON causes errors. Setting the Content-Type to 'application/x-www-form-urlencoded' and serializing the POST and PUT bodies as standard query string seems to be successful.
-
+when POSTing to /offers/123/ the "status" param returned has a typo: "Request Succesful" should be "Request Successful"
 

@@ -79,18 +79,11 @@ def advertiser
   api_client.create_advertiser(valid_advertiser_params)
 end
 
-def last_advertiser_id
-  if api_client.advertisers.empty?
-    api_client.create_advertiser(valid_advertiser_params)
-  end
-  api_client.advertisers.last['id']
-end
-
 def valid_offer_params(params = {})
   advertiser_id = if params.has_key?(:advertiser_id)
     params.delete(:advertiser_id)
   else
-    last_advertiser_id
+    advertiser['id']
   end
 
   rand_str = SecureRandom.hex
@@ -125,7 +118,6 @@ def valid_offer_params(params = {})
     },
     comment:'Hello there'
   }.merge(params)
-
 end
 
 def delete_all_offers

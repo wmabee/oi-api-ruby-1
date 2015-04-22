@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:37 GMT
+      - Wed, 22 Apr 2015 23:34:44 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,14 +34,16 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"id": 39638, "name": "new advertiser 994a8d4952ce89d195c7b29e5e6f094b",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-22T19:36:36",
-        "modify_date": "2015-04-22T19:36:36"}]'
+      string: '[{"id": 39618, "name": "new advertiser 3bc40d1ac0ee568759a7c816eab94498",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-22T19:35:42",
+        "modify_date": "2015-04-22T19:35:42"}, {"id": 39619, "name": "new advertiser
+        46cbbd10b6bf61e4f8b77590654167b9", "status_id": 1, "category_id": 1010, "key":
+        "", "create_date": "2015-04-22T19:35:43", "modify_date": "2015-04-22T19:35:43"}]'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:36 GMT
+  recorded_at: Wed, 22 Apr 2015 23:35:43 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39638/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39618/
     body:
       encoding: US-ASCII
       string: ''
@@ -56,7 +58,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:37 GMT
+      - Wed, 22 Apr 2015 23:34:44 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -76,10 +78,10 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:37 GMT
+  recorded_at: Wed, 22 Apr 2015 23:35:44 GMT
 - request:
-    method: get
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
+    method: delete
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39619/
     body:
       encoding: US-ASCII
       string: ''
@@ -94,7 +96,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:37 GMT
+      - Wed, 22 Apr 2015 23:34:44 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -102,7 +104,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Allow:
-      - GET, POST, HEAD, OPTIONS
+      - GET, PUT, DELETE, HEAD, OPTIONS
       Connection:
       - close
       Transfer-Encoding:
@@ -111,15 +113,16 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: "[]"
+      string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
+        deleted"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:37 GMT
+  recorded_at: Wed, 22 Apr 2015 23:35:44 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
     body:
       encoding: UTF-8
-      string: '{"name":"new advertiser e905586cb3152927a723c4055cd48105","status_id":1,"category_id":1010}'
+      string: '{"name":"new advertiser 577ddcfbbde33500bd829c42ef5d23b3","status_id":1,"category_id":1010}'
     headers:
       Content-Type:
       - application/json
@@ -131,7 +134,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:38 GMT
+      - Wed, 22 Apr 2015 23:34:45 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -149,18 +152,15 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 39639}'
+        created", "id": 39620}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:38 GMT
+  recorded_at: Wed, 22 Apr 2015 23:35:45 GMT
 - request:
-    method: post
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39620/
     body:
-      encoding: UTF-8
-      string: '{"name":"Special Product a8716d93aa816f13d6934206c17a1bf3","category_id":1010,"status_id":9,"headline":"Buy
-        our product today a8716d93aa816f13d6934206c17a1bf3","body":"Try for FREE for
-        a limited time only. This is your one-and-only chance! a8716d93aa816f13d6934206c17a1bf3","cpl_price":1.0,"global_cap":1000,"monthly_cap":300,"daily_cap":10,"image1":"http://www.opt-intelligence.com/images/cats120.png","image2":"http://www.opt-intelligence.com/images/cats88.png","data_points":["EM","FN"],"targeting":{"min_age":18,"max_age":45,"zip":{"include":true,"zip_codes":["14226","10009","10023","11211"]},"gender":"m","country":{"include":true,"countries":["USA"]},"third_party":{}},"comment":"Hello
-        there"}'
+      encoding: US-ASCII
+      string: ''
     headers:
       Content-Type:
       - application/json
@@ -168,11 +168,11 @@ http_interactions:
       - OiApiRuby Gem 0.0.1
   response:
     status:
-      code: 400
-      message: BAD REQUEST
+      code: 200
+      message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:38 GMT
+      - Wed, 22 Apr 2015 23:34:45 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -180,7 +180,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Allow:
-      - GET, POST, HEAD, OPTIONS
+      - GET, PUT, DELETE, HEAD, OPTIONS
       Connection:
       - close
       Transfer-Encoding:
@@ -189,7 +189,9 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"status": "Create Failed", "message": "Field advertiser_id is required"}'
+      string: '{"id": 39620, "name": "new advertiser 577ddcfbbde33500bd829c42ef5d23b3",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-22T19:35:44",
+        "modify_date": "2015-04-22T19:35:44"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:38 GMT
+  recorded_at: Wed, 22 Apr 2015 23:35:45 GMT
 recorded_with: VCR 2.9.3
