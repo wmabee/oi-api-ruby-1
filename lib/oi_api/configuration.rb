@@ -11,13 +11,15 @@ module OiApi
       :api_endpoint,
       :user_agent,
       :format,
-      :content_type
+      :content_type,
+      :debug_output
     ]
 
     DEFAULT_API_ENDPOINT = 'https://oiapi.com/v1/'.freeze
     DEFAULT_USER_AGENT   = "OiApiRuby Gem #{OiApi::VERSION}".freeze
     DEFAULT_FORMAT       = :json
     DEFAULT_CONTENT_TYPE = 'application/json'
+    DEFAULT_DEBUG_OUTPUT = false # $stdout
 
     attr_accessor *VALID_CONFIG_KEYS
 
@@ -40,6 +42,7 @@ module OiApi
       self.user_agent    = DEFAULT_USER_AGENT
       self.format        = DEFAULT_FORMAT
       self.content_type  = DEFAULT_CONTENT_TYPE
+      self.debug_output  = DEFAULT_DEBUG_OUTPUT
     end
 
   end

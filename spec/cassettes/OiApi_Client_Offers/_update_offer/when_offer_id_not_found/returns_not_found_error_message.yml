@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:51 GMT
+      - Thu, 23 Apr 2015 19:56:49 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -36,7 +36,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:50 GMT
+  recorded_at: Thu, 23 Apr 2015 19:58:25 GMT
 - request:
     method: get
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
@@ -54,7 +54,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:51 GMT
+      - Thu, 23 Apr 2015 19:56:50 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -73,7 +73,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:51 GMT
+  recorded_at: Thu, 23 Apr 2015 19:58:25 GMT
 - request:
     method: put
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/99999999999999/
@@ -91,7 +91,7 @@ http_interactions:
       message: NOT FOUND
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:51 GMT
+      - Thu, 23 Apr 2015 19:56:50 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -110,5 +110,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status": "Update Failed", "message": "Offer not found"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:51 GMT
+  recorded_at: Thu, 23 Apr 2015 19:58:26 GMT
 recorded_with: VCR 2.9.3

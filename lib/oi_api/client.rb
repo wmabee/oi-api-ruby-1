@@ -39,6 +39,7 @@ module OiApi
         public_send("#{key}=", merged_options[key])
       end
 
+      # set base_uri and format via HTTParty class methods
       self.class.base_uri(api_endpoint)
       self.class.format(format)
     end
@@ -81,9 +82,10 @@ module OiApi
 
       _options = {
         basic_auth: basic_auth_options,
-        headers: default_header_options.merge(headers)
+        headers: default_header_options.merge(headers),
       }
 
+      _options[:debug_output] = debug_output if debug_output
       _options[:body] = body.to_json unless body.empty?
 
       _options

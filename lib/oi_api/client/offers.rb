@@ -20,9 +20,10 @@ module OiApi
         self.class.put("/offers/#{offer_id}/", options_with_basic_auth(options))
       end
 
-      def delete_offer(offer_id, options = {})
-        self.class.delete("/offers/#{offer_id}/", options_with_basic_auth(options))
-      end
+      # DELETE not allowed for offers?
+      #def delete_offer(offer_id, options = {})
+      #  self.class.delete("/offers/#{offer_id}/", options_with_basic_auth(options))
+      #end
 
     end
 

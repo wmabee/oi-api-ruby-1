@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:59 GMT
+      - Thu, 23 Apr 2015 19:53:35 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,14 +34,14 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"id": 39627, "name": "new advertiser eca2ae985e1fd18a391d081456ae2d04",
-        "status_id": 2, "category_id": 1010, "key": "", "create_date": "2015-04-22T19:35:57",
-        "modify_date": "2015-04-22T19:35:58"}]'
+      string: '[{"id": 39911, "name": "new advertiser b3053ea4a9de185cea557267e4829e10",
+        "status_id": 2, "category_id": 1010, "key": "", "create_date": "2015-04-23T15:55:08",
+        "modify_date": "2015-04-23T15:55:09"}]'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:58 GMT
+  recorded_at: Thu, 23 Apr 2015 19:55:10 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39627/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39911/
     body:
       encoding: US-ASCII
       string: ''
@@ -56,7 +56,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:59 GMT
+      - Thu, 23 Apr 2015 19:53:35 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -76,7 +76,7 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:59 GMT
+  recorded_at: Thu, 23 Apr 2015 19:55:10 GMT
 - request:
     method: put
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/99999999999999/
@@ -94,7 +94,7 @@ http_interactions:
       message: BAD REQUEST
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:59 GMT
+      - Thu, 23 Apr 2015 19:53:35 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -113,5 +113,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status": "Update Failed", "message": "No permission to update advertiser."}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:59 GMT
+  recorded_at: Thu, 23 Apr 2015 19:55:11 GMT
 recorded_with: VCR 2.9.3

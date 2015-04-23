@@ -75,3 +75,11 @@ The API should return all offers when performing a GET to /offers/ but should re
 
 when POSTing to /offers/123/ the "status" param returned has a typo: "Request Succesful" should be "Request Successful"
 
+## Are DELETE requests not allowed for offers?
+
+If no DELETE is provided, even for a test account, then the number of offers created by API testing is going to be considerable.
+
+## Data transfers POST params redundancy
+
+Data transfers endpoint example POST params has an offer_id in both the URI and in the POST body. If the offer_id is coming from a nested resource it should probably be omitted from the POST body.
+

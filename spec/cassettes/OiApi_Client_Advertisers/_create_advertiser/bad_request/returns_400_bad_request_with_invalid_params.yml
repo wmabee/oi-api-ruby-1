@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:54 GMT
+      - Thu, 23 Apr 2015 19:53:23 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,14 +34,14 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"id": 39625, "name": "new advertiser bb3dc74009b6ae7d02a8c69464791aca",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-22T19:35:52",
-        "modify_date": "2015-04-22T19:35:52"}]'
+      string: '[{"id": 39908, "name": "new advertiser d395aa5742e3186e960cb811bdb2dbb0",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-23T15:54:57",
+        "modify_date": "2015-04-23T15:54:57"}]'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:53 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:58 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39625/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39908/
     body:
       encoding: US-ASCII
       string: ''
@@ -56,7 +56,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:54 GMT
+      - Thu, 23 Apr 2015 19:53:23 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -76,7 +76,7 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:54 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:59 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
@@ -94,7 +94,7 @@ http_interactions:
       message: BAD REQUEST
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:54 GMT
+      - Thu, 23 Apr 2015 19:53:24 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -113,5 +113,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status": "Create Failed", "message": {"name": ["This field is required."]}}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:54 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:59 GMT
 recorded_with: VCR 2.9.3

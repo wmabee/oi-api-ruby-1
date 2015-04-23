@@ -3,15 +3,23 @@ require 'spec_helper'
 RSpec.describe OiApi::Client::Advertisers do
 
   before do
-    delete_all_advertisers
+    Factory.delete_all_advertisers
   end
+
+  let(:api) {
+    Factory.api_client
+  }
+
+  let(:advertiser) {
+    Factory.create_advertiser
+  }
 
   context '#advertisers', :vcr do
 
     let(:response) {
-      api_client.create_advertiser(valid_advertiser_params)
-      api_client.create_advertiser(valid_advertiser_params)
-      api_client.advertisers
+      Factory.create_advertiser
+      Factory.create_advertiser
+      api.advertisers
     }
 
     it 'returns correct http code' do
@@ -30,12 +38,8 @@ RSpec.describe OiApi::Client::Advertisers do
 
   context '#advertiser', :vcr do
 
-    let(:advertiser) {
-      api_client.create_advertiser(valid_advertiser_params)
-    }
-
     let(:response) {
-      api_client.advertiser(advertiser['id'])
+      api.advertiser(advertiser['id'])
     }
 
     it 'returns correct http code' do
@@ -47,23 +51,25 @@ RSpec.describe OiApi::Client::Advertisers do
     end
 
     it 'returns the advertiser' do
-      expect(response.keys).to include *valid_advertiser_params.keys.map(&:to_s)
+      expect(response.keys).to include *Factory.valid_advertiser_params.keys.map(&:to_s)
     end
 
     context 'when advertiser_id not found' do
 
       let(:bad_id) { 99999999999999 }
 
+      let(:response) { api.advertiser(bad_id) }
+
       it 'returns not found error message' do
-        expect(api_client.advertiser(bad_id)['message']).to eql 'Record not found'
+        expect(response['message']).to eql 'Record not found'
       end
 
       it 'returns not found error message' do
-        expect(api_client.advertiser(bad_id)['status']).to eql 'error'
+        expect(response['status']).to eql 'error'
       end
 
       it 'returns 404' do
-        expect(api_client.advertiser(bad_id).code).to eql 404
+        expect(response.code).to eql 404
       end
 
     end
@@ -72,44 +78,50 @@ RSpec.describe OiApi::Client::Advertisers do
 
   context '#create_advertiser', :vcr do
 
+    let(:response) {
+      api.create_advertiser(Factory.valid_advertiser_params)
+    }
+
     it 'creates an advertiser' do
-      expect(
-        api_client.create_advertiser(valid_advertiser_params)
-      ).to include(
+      expect(response).to include(
         'status' => 'Create Successful',
         'message' => 'Advertiser successfully created'
       )
     end
 
     it 'returns 201 created' do
-      expect(api_client.create_advertiser(valid_advertiser_params).code).to eql 201
+      expect(response.code).to eql 201
     end
 
     context 'bad request' do
 
-      let(:invalid_advertiser_params) {
-        _prms = valid_advertiser_params
+      let(:invalid_params) {
+        _prms = Factory.valid_advertiser_params
         _prms.delete(:name)
         _prms
       }
 
-      it 'returns 400 bad request when name already exists' do
-        _prms = valid_advertiser_params
-        api_client.create_advertiser(_prms)
-        expect(api_client.create_advertiser(_prms).code).to eql 400
-      end
+      let(:response) {
+        api.create_advertiser(invalid_params)
+      }
 
       it 'returns 400 bad request with invalid params' do
-        expect(api_client.create_advertiser(invalid_advertiser_params).code).to eql 400
+        expect(response.code).to eql 400
       end
 
       it 'returns an error message' do
-        expect(api_client.create_advertiser(invalid_advertiser_params)).to eql(
+        expect(response).to eql(
           'status' => 'Create Failed',
           'message' => {
             'name' => ['This field is required.']
           }
         )
+      end
+
+      it 'returns 400 bad request when name already exists' do
+        _prms = Factory.valid_advertiser_params
+        api.create_advertiser(_prms)
+        expect(api.create_advertiser(_prms).code).to eql 400
       end
 
     end
@@ -118,34 +130,36 @@ RSpec.describe OiApi::Client::Advertisers do
 
   context '#update_advertiser', :vcr do
 
-    let(:advertiser) {
-      api_client.create_advertiser(valid_advertiser_params)
+    let(:response) {
+      api.update_advertiser(advertiser['id'], status_id: 2)
     }
 
     it 'updates an advertiser' do
-      expect(api_client.update_advertiser(advertiser['id'], status_id: 2)).to eql(
-        'status' => 'Update Successful'
-      )
+      expect(response).to eql('status' => 'Update Successful')
     end
 
     it 'returns 200 OK' do
-      expect(api_client.update_advertiser(advertiser['id'], status_id: 2).code).to eql 200
+      expect(response.code).to eql 200
     end
 
     context 'when advertiser_id not found' do
 
       let(:bad_id) { 99999999999999 }
 
+      let(:response) {
+        api.update_advertiser(bad_id, status_id: 2)
+      }
+
       it 'returns 404' do
-        expect(api_client.update_advertiser(bad_id, status_id: 2).code).to eql 404
+        expect(response.code).to eql 404
       end
 
       it 'returns not found error message' do
-        expect(api_client.update_advertiser(bad_id, status_id: 2)['message']).to eql 'Record not found'
+        expect(response['message']).to eql 'Record not found'
       end
 
       it 'returns error status' do
-        expect(api_client.update_advertiser(bad_id, status_id: 2)['status']).to eql 'error'
+        expect(response['status']).to eql 'error'
       end
 
     end
@@ -154,31 +168,39 @@ RSpec.describe OiApi::Client::Advertisers do
 
   context '#delete_advertiser', :vcr do
 
+    let(:response) {
+      api.delete_advertiser(advertiser['id'])
+    }
+
     it 'deletes an advertiser' do
-      expect(api_client.delete_advertiser(advertiser['id'])).to include(
+      expect(response).to include(
         'status' => 'Delete Successful',
         'message' => 'Advertiser Succesfully deleted'
       )
     end
 
     it 'returns 200 OK' do
-      expect(api_client.delete_advertiser(advertiser['id']).code).to eql 200
+      expect(response.code).to eql 200
     end
 
     context 'when advertiser_id not found' do
 
       let(:bad_id) { 99999999999999 }
 
+      let(:response) {
+        api.delete_advertiser(bad_id)
+      }
+
       it 'returns not found error message' do
-        expect(api_client.delete_advertiser(bad_id)['message']).to eql 'Record not found'
+        expect(response['message']).to eql 'Record not found'
       end
 
       it 'returns not found error message' do
-        expect(api_client.delete_advertiser(bad_id)['status']).to eql 'error'
+        expect(response['status']).to eql 'error'
       end
 
       it 'returns 404' do
-        expect(api_client.delete_advertiser(bad_id).code).to eql 404
+        expect(response.code).to eql 404
       end
 
     end

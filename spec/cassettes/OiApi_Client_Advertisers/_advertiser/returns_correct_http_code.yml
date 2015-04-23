@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:44 GMT
+      - Thu, 23 Apr 2015 19:53:14 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,16 +34,16 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"id": 39618, "name": "new advertiser 3bc40d1ac0ee568759a7c816eab94498",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-22T19:35:42",
-        "modify_date": "2015-04-22T19:35:42"}, {"id": 39619, "name": "new advertiser
-        46cbbd10b6bf61e4f8b77590654167b9", "status_id": 1, "category_id": 1010, "key":
-        "", "create_date": "2015-04-22T19:35:43", "modify_date": "2015-04-22T19:35:43"}]'
+      string: '[{"id": 39902, "name": "new advertiser 166b42c9ca81df3f886f6813c8a7df80",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-23T15:54:48",
+        "modify_date": "2015-04-23T15:54:48"}, {"id": 39903, "name": "new advertiser
+        513279a3d6f8dc3b6843f56994f750d1", "status_id": 1, "category_id": 1010, "key":
+        "", "create_date": "2015-04-23T15:54:48", "modify_date": "2015-04-23T15:54:48"}]'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:43 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:50 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39618/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39902/
     body:
       encoding: US-ASCII
       string: ''
@@ -58,7 +58,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:44 GMT
+      - Thu, 23 Apr 2015 19:53:15 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -78,10 +78,10 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:44 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:50 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39619/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39903/
     body:
       encoding: US-ASCII
       string: ''
@@ -96,7 +96,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:44 GMT
+      - Thu, 23 Apr 2015 19:53:15 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -116,13 +116,13 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:44 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:50 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
     body:
       encoding: UTF-8
-      string: '{"name":"new advertiser 577ddcfbbde33500bd829c42ef5d23b3","status_id":1,"category_id":1010}'
+      string: '{"name":"new advertiser c5fe369d19b5c6a055d6b4d901980803","status_id":1,"category_id":1010}'
     headers:
       Content-Type:
       - application/json
@@ -134,7 +134,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:45 GMT
+      - Thu, 23 Apr 2015 19:53:15 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -152,12 +152,12 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 39620}'
+        created", "id": 39904}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:45 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:51 GMT
 - request:
     method: get
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39620/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39904/
     body:
       encoding: US-ASCII
       string: ''
@@ -172,7 +172,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:45 GMT
+      - Thu, 23 Apr 2015 19:53:16 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -189,9 +189,9 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"id": 39620, "name": "new advertiser 577ddcfbbde33500bd829c42ef5d23b3",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-22T19:35:44",
-        "modify_date": "2015-04-22T19:35:44"}'
+      string: '{"id": 39904, "name": "new advertiser c5fe369d19b5c6a055d6b4d901980803",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-23T15:54:50",
+        "modify_date": "2015-04-23T15:54:50"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:45 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:51 GMT
 recorded_with: VCR 2.9.3

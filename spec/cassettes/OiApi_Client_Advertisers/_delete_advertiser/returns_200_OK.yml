@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:02 GMT
+      - Thu, 23 Apr 2015 19:53:38 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -36,13 +36,13 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:02 GMT
+  recorded_at: Thu, 23 Apr 2015 19:55:14 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
     body:
       encoding: UTF-8
-      string: '{"name":"new advertiser 67586beb53e893b35e0ef6b2ed6e4de9","status_id":1,"category_id":1010}'
+      string: '{"name":"new advertiser 0e271500ea62b6c63c83af7c3aee3018","status_id":1,"category_id":1010}'
     headers:
       Content-Type:
       - application/json
@@ -54,7 +54,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:02 GMT
+      - Thu, 23 Apr 2015 19:53:39 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -72,12 +72,12 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 39629}'
+        created", "id": 39913}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:02 GMT
+  recorded_at: Thu, 23 Apr 2015 19:55:14 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39629/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39913/
     body:
       encoding: US-ASCII
       string: ''
@@ -92,7 +92,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:03 GMT
+      - Thu, 23 Apr 2015 19:53:39 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -112,5 +112,5 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:03 GMT
+  recorded_at: Thu, 23 Apr 2015 19:55:15 GMT
 recorded_with: VCR 2.9.3

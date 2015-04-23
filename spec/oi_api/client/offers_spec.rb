@@ -3,17 +3,32 @@ require 'spec_helper'
 RSpec.describe OiApi::Client::Offers do
 
   before do
-    delete_all_advertisers
-    delete_all_offers
+    Factory.delete_all_advertisers
+    Factory.delete_all_offers
   end
+
+  let(:api) {
+    Factory.api_client
+  }
+
+  let(:offer_params) {
+    Factory.valid_offer_params
+  }
+
+  let(:offer) {
+    Factory.create_offer(offer_params)
+  }
+
+  let(:advertiser) {
+    Factory.create_advertiser
+  }
 
   context '#offers', :vcr do
 
     let(:response) {
-      advertiser_id = advertiser['id']
-      api_client.create_offer(valid_offer_params(advertiser_id: advertiser_id))
-      api_client.create_offer(valid_offer_params(advertiser_id: advertiser_id))
-      api_client.offers
+      Factory.create_offer(advertiser_id: advertiser['id'])
+      Factory.create_offer(advertiser_id: advertiser['id'])
+      api.offers
     }
 
     it 'returns correct http code' do
@@ -32,14 +47,8 @@ RSpec.describe OiApi::Client::Offers do
 
   context '#offer', :vcr do
 
-    let(:offer_params) {
-      adv = api_client.create_advertiser(valid_advertiser_params)
-      valid_offer_params(advertiser_id: adv['id'])
-    }
-
     let(:response) {
-      offer = api_client.create_offer(offer_params)
-      api_client.offer(offer['id'])
+      api.offer(offer['id'])
     }
 
     it 'returns correct http code' do
@@ -59,37 +68,38 @@ RSpec.describe OiApi::Client::Offers do
   context '#create_offer', :vcr do
 
     let(:response) {
-      advertiser_id = api_client.create_advertiser(valid_advertiser_params)['id']
-      api_client.create_offer(valid_offer_params(advertiser_id: advertiser_id))
+      api.create_offer(Factory.valid_offer_params)
     }
 
     it 'creates an offer' do
-      expect(
-        api_client.create_offer(valid_offer_params)
-      ).to include(
+      expect(response).to include(
         'status' => 'Request Successful',
         'message' => 'Offer successfully created'
       )
     end
 
     it 'returns 201 created' do
-      expect(api_client.create_offer(valid_offer_params).code).to eql 201
+      expect(response.code).to eql 201
     end
 
     context 'bad request' do
 
       let(:invalid_offer_params) {
-        _prms = valid_offer_params
+        _prms = Factory.valid_offer_params
         _prms.delete(:advertiser_id)
         _prms
       }
 
+      let(:response) {
+        api.create_offer(invalid_offer_params)
+      }
+
       it 'returns 400 bad request with invalid params' do
-        expect(api_client.create_offer(invalid_offer_params).code).to eql 400
+        expect(response.code).to eql 400
       end
 
       it 'returns an error message' do
-        expect(api_client.create_offer(invalid_offer_params)).to eql(
+        expect(response).to eql(
           'status'=>'Create Failed',
           'message'=>'Field advertiser_id is required'
         )
@@ -101,55 +111,57 @@ RSpec.describe OiApi::Client::Offers do
 
   context '#update_offer', :vcr do
 
-    let(:offer) {
-      api_client.create_offer(valid_offer_params)
-    }
-
     let(:update_params) {{
       headline: 'Last chance to buy our product',
       cpl_price: 2.0
     }}
 
+    let(:response) {
+      api.update_offer(offer['id'], update_params)
+    }
+
     it 'updates an offer' do
-      api_client.update_offer(offer['id'], update_params)
-      expect(api_client.offer(offer['id'])['headline']).to eql update_params[:headline]
+      response
+      expect(api.offer(offer['id'])['headline']).to eql update_params[:headline]
     end
 
     it 'returns success status' do
-      expect(
-        api_client.update_offer(offer['id'], update_params)
-      ).to include(
+      expect(response).to include(
         'status' => 'Request Succesful',
         'message' => 'Offer successfully updated',
       )
     end
 
     it 'returns 200 OK' do
-      expect(api_client.update_offer(offer['id'], update_params).code).to eql 200
+      expect(response.code).to eql 200
     end
 
     context 'when offer_id not found' do
 
       let(:bad_id) { 99999999999999 }
 
+      let(:response) {
+        api.update_offer(bad_id, status_id: 2)
+      }
+
       it 'returns 404' do
-        expect(api_client.update_offer(bad_id, status_id: 2).code).to eql 404
+        expect(response.code).to eql 404
       end
 
       it 'returns not found error message' do
-        expect(api_client.update_offer(bad_id, status_id: 2)['message']).to eql 'Offer not found'
+        expect(response['message']).to eql 'Offer not found'
       end
 
       it 'returns error status' do
-        expect(api_client.update_offer(bad_id, status_id: 2)['status']).to eql 'Update Failed'
+        expect(response['status']).to eql 'Update Failed'
       end
 
     end
 
   end
 
-  context '#delete_offer' do
-
-  end
+  # DELETE not available for offers?
+  #context '#delete_offer' do
+  #end
 
 end

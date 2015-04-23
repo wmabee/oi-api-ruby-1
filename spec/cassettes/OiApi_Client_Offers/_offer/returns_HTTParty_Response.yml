@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:22 GMT
+      - Thu, 23 Apr 2015 19:56:17 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,14 +34,16 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"id": 39633, "name": "new advertiser e5e2deaa52ca4f4ef15d6622473d1661",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-22T19:36:20",
-        "modify_date": "2015-04-22T19:36:20"}]'
+      string: '[{"id": 39961, "name": "new advertiser fb614c058c464700a9eceb9c05915a63",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-23T15:57:49",
+        "modify_date": "2015-04-23T15:57:49"}, {"id": 39962, "name": "new advertiser
+        f849ac1f58d758d2bb2eff44826725d1", "status_id": 1, "category_id": 1010, "key":
+        "", "create_date": "2015-04-23T15:57:49", "modify_date": "2015-04-23T15:57:49"}]'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:22 GMT
+  recorded_at: Thu, 23 Apr 2015 19:57:52 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39633/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39961/
     body:
       encoding: US-ASCII
       string: ''
@@ -56,7 +58,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:23 GMT
+      - Thu, 23 Apr 2015 19:56:17 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -76,7 +78,45 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:22 GMT
+  recorded_at: Thu, 23 Apr 2015 19:57:53 GMT
+- request:
+    method: delete
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39962/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.0.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 23 Apr 2015 19:56:18 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, PUT, DELETE, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
+        deleted"}'
+    http_version: 
+  recorded_at: Thu, 23 Apr 2015 19:57:53 GMT
 - request:
     method: get
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
@@ -94,7 +134,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:23 GMT
+      - Thu, 23 Apr 2015 19:56:18 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -113,13 +153,13 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:23 GMT
+  recorded_at: Thu, 23 Apr 2015 19:57:53 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
     body:
       encoding: UTF-8
-      string: '{"name":"new advertiser abf3d1a1da7bb1fe338266bd4ed3f073","status_id":1,"category_id":1010}'
+      string: '{"name":"new advertiser 757094ca05eb3973b6e0209f29551345","status_id":1,"category_id":1010}'
     headers:
       Content-Type:
       - application/json
@@ -131,7 +171,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:23 GMT
+      - Thu, 23 Apr 2015 19:56:18 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -149,17 +189,55 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 39634}'
+        created", "id": 39963}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:23 GMT
+  recorded_at: Thu, 23 Apr 2015 19:57:54 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
+    body:
+      encoding: UTF-8
+      string: '{"name":"new advertiser 26fb694dcdf723a3f8a5fb915bb314e1","status_id":1,"category_id":1010}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.0.1
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Thu, 23 Apr 2015 19:56:19 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Create Successful", "message": "Advertiser successfully
+        created", "id": 39964}'
+    http_version: 
+  recorded_at: Thu, 23 Apr 2015 19:57:54 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
     body:
       encoding: UTF-8
-      string: '{"advertiser_id":39634,"name":"Special Product 74206db4a5ced447bdbd78ed2097ca39","category_id":1010,"status_id":9,"headline":"Buy
-        our product today 74206db4a5ced447bdbd78ed2097ca39","body":"Try for FREE for
-        a limited time only. This is your one-and-only chance! 74206db4a5ced447bdbd78ed2097ca39","cpl_price":1.0,"global_cap":1000,"monthly_cap":300,"daily_cap":10,"image1":"http://www.opt-intelligence.com/images/cats120.png","image2":"http://www.opt-intelligence.com/images/cats88.png","data_points":["EM","FN"],"targeting":{"min_age":18,"max_age":45,"zip":{"include":true,"zip_codes":["14226","10009","10023","11211"]},"gender":"m","country":{"include":true,"countries":["USA"]},"third_party":{}},"comment":"Hello
+      string: '{"advertiser_id":39963,"name":"Special Product 6e2cb90f0bcf909886182e7262353d63","category_id":1010,"status_id":9,"headline":"Buy
+        our product today 38de9a4b3187bab1c7040fb847d90e6c","body":"Try for FREE for
+        a limited time only. This is your one-and-only chance! fafedba7c7bca79060ee85e3958c93ef","cpl_price":1.0,"global_cap":1000,"monthly_cap":300,"daily_cap":10,"image1":"http://www.opt-intelligence.com/images/cats120.png","image2":"http://www.opt-intelligence.com/images/cats88.png","data_points":["EM","FN"],"targeting":{"min_age":18,"max_age":45,"zip":{"include":true,"zip_codes":["14226","10009","10023","11211"]},"gender":"m","country":{"include":true,"countries":["USA"]},"third_party":{}},"comment":"Hello
         there"}'
     headers:
       Content-Type:
@@ -172,7 +250,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:24 GMT
+      - Thu, 23 Apr 2015 19:56:19 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -190,12 +268,12 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Request Successful", "message": "Offer successfully created",
-        "id": 79276}'
+        "id": 79557}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:25 GMT
+  recorded_at: Thu, 23 Apr 2015 19:57:56 GMT
 - request:
     method: get
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/79276/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/79557/
     body:
       encoding: US-ASCII
       string: ''
@@ -210,7 +288,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:25 GMT
+      - Thu, 23 Apr 2015 19:56:21 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -227,20 +305,20 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"id": 79276, "advertiser_id": 39634, "status_id": 9, "category_id":
-        1010, "name": "Special Product 74206db4a5ced447bdbd78ed2097ca39", "headline":
-        "Buy our product today 74206db4a5ced447bdbd78ed2097ca39", "body": "Try for
-        FREE for a limited time only. This is your one-and-only chance! 74206db4a5ced447bdbd78ed2097ca39",
+      string: '{"id": 79557, "advertiser_id": 39963, "status_id": 9, "category_id":
+        1010, "name": "Special Product 6e2cb90f0bcf909886182e7262353d63", "headline":
+        "Buy our product today 38de9a4b3187bab1c7040fb847d90e6c", "body": "Try for
+        FREE for a limited time only. This is your one-and-only chance! fafedba7c7bca79060ee85e3958c93ef",
         "unsubscribe_url": "http://opt-intelligence.com/ar/unsub/Optintelligence_Unsubscribe.html",
         "privacy_policy": "", "cpl_price": 1.0, "cap_status_id": 1101, "global_cap":
-        1000, "monthly_cap": 300, "daily_cap": 10, "create_date": "2015-04-22T19:36:24",
-        "modify_date": "2015-04-22T19:36:24", "image1": "https://d1e25ii2es31lb.cloudfront.net/1429745724645-003609f69057fb771db4b7fd67394d42.png",
-        "image2": "https://d1e25ii2es31lb.cloudfront.net/1429745725017-2e6fc1fcb998fdaf598bea1859eae677.png",
+        1000, "monthly_cap": 300, "daily_cap": 10, "create_date": "2015-04-23T15:57:55",
+        "modify_date": "2015-04-23T15:57:55", "image1": "https://d1e25ii2es31lb.cloudfront.net/1429818980255-52af14f39f8bd5ec26319eaaa1fd2d47.png",
+        "image2": "https://d1e25ii2es31lb.cloudfront.net/1429818980643-eb36d3182d9d27c2023e11168c225e2d.png",
         "data_points": ["EM", "FN"], "targeting": {"max_age": 45, "state": {"states":
         [], "include": true}, "zip": {"include": true, "zip_codes": ["14226", "10009",
         "10023", "11211"]}, "country": {"include": true, "countries": ["USA"]}, "zip_radius":
         null, "gender": "m", "third_party": {}, "min_age": 18}, "comment": "Hello
         there"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:25 GMT
+  recorded_at: Thu, 23 Apr 2015 19:57:56 GMT
 recorded_with: VCR 2.9.3

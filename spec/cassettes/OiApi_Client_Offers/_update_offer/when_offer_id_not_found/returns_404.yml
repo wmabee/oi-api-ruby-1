@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:49 GMT
+      - Thu, 23 Apr 2015 19:56:48 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,14 +34,16 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"id": 39642, "name": "new advertiser 765574dc206fc19a05486a0c78e6f420",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-22T19:36:46",
-        "modify_date": "2015-04-22T19:36:46"}]'
+      string: '[{"id": 39975, "name": "new advertiser 7079b43dce8b8d06b1d3174b7fc83ed5",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-23T15:58:20",
+        "modify_date": "2015-04-23T15:58:20"}, {"id": 39976, "name": "new advertiser
+        96e1bd19e46d1834278f989812fcfdd2", "status_id": 1, "category_id": 1010, "key":
+        "", "create_date": "2015-04-23T15:58:20", "modify_date": "2015-04-23T15:58:20"}]'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:49 GMT
+  recorded_at: Thu, 23 Apr 2015 19:58:23 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39642/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39975/
     body:
       encoding: US-ASCII
       string: ''
@@ -56,7 +58,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:50 GMT
+      - Thu, 23 Apr 2015 19:56:48 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -76,7 +78,45 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:49 GMT
+  recorded_at: Thu, 23 Apr 2015 19:58:23 GMT
+- request:
+    method: delete
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39976/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.0.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 23 Apr 2015 19:56:48 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, PUT, DELETE, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
+        deleted"}'
+    http_version: 
+  recorded_at: Thu, 23 Apr 2015 19:58:24 GMT
 - request:
     method: get
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
@@ -94,7 +134,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:50 GMT
+      - Thu, 23 Apr 2015 19:56:49 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -113,7 +153,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:50 GMT
+  recorded_at: Thu, 23 Apr 2015 19:58:24 GMT
 - request:
     method: put
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/99999999999999/
@@ -131,7 +171,7 @@ http_interactions:
       message: NOT FOUND
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:35:50 GMT
+      - Thu, 23 Apr 2015 19:56:49 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -150,5 +190,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status": "Update Failed", "message": "Offer not found"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:36:50 GMT
+  recorded_at: Thu, 23 Apr 2015 19:58:24 GMT
 recorded_with: VCR 2.9.3

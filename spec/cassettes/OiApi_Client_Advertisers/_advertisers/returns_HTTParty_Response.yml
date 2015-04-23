@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:39 GMT
+      - Thu, 23 Apr 2015 19:53:09 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,16 +34,16 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"id": 39614, "name": "new advertiser 7e634c280cd4a4990aa7a0986822295b",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-22T19:35:37",
-        "modify_date": "2015-04-22T19:35:37"}, {"id": 39615, "name": "new advertiser
-        3c1ff5ee4f9994136d17259c260f39e1", "status_id": 1, "category_id": 1010, "key":
-        "", "create_date": "2015-04-22T19:35:38", "modify_date": "2015-04-22T19:35:38"}]'
+      string: '[{"id": 39898, "name": "new advertiser c7559786acf25618a48d9b64a96c5403",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-23T15:54:43",
+        "modify_date": "2015-04-23T15:54:43"}, {"id": 39899, "name": "new advertiser
+        ff26f4abd0ca6e5066ced0d5efbc391f", "status_id": 1, "category_id": 1010, "key":
+        "", "create_date": "2015-04-23T15:54:43", "modify_date": "2015-04-23T15:54:43"}]'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:39 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:45 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39614/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39898/
     body:
       encoding: US-ASCII
       string: ''
@@ -58,7 +58,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:39 GMT
+      - Thu, 23 Apr 2015 19:53:10 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -78,10 +78,10 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:39 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:45 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39615/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39899/
     body:
       encoding: US-ASCII
       string: ''
@@ -96,7 +96,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:40 GMT
+      - Thu, 23 Apr 2015 19:53:10 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -116,13 +116,13 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:39 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:45 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
     body:
       encoding: UTF-8
-      string: '{"name":"new advertiser f4416fbad7768af55af50e040690ab58","status_id":1,"category_id":1010}'
+      string: '{"name":"new advertiser f1bae6866ac4baa089cfa7722a5a93ae","status_id":1,"category_id":1010}'
     headers:
       Content-Type:
       - application/json
@@ -134,7 +134,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:40 GMT
+      - Thu, 23 Apr 2015 19:53:10 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -152,15 +152,15 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 39616}'
+        created", "id": 39900}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:40 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:46 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
     body:
       encoding: UTF-8
-      string: '{"name":"new advertiser d5c7a8866c10ed48e94ed56b2597b49e","status_id":1,"category_id":1010}'
+      string: '{"name":"new advertiser a594d5156b67b00c8fe957412bb459a9","status_id":1,"category_id":1010}'
     headers:
       Content-Type:
       - application/json
@@ -172,7 +172,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:40 GMT
+      - Thu, 23 Apr 2015 19:53:11 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -190,9 +190,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 39617}'
+        created", "id": 39901}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:40 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:46 GMT
 - request:
     method: get
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
@@ -210,7 +210,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 23:34:41 GMT
+      - Thu, 23 Apr 2015 19:53:11 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -227,11 +227,11 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"id": 39616, "name": "new advertiser f4416fbad7768af55af50e040690ab58",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-22T19:35:40",
-        "modify_date": "2015-04-22T19:35:40"}, {"id": 39617, "name": "new advertiser
-        d5c7a8866c10ed48e94ed56b2597b49e", "status_id": 1, "category_id": 1010, "key":
-        "", "create_date": "2015-04-22T19:35:40", "modify_date": "2015-04-22T19:35:40"}]'
+      string: '[{"id": 39900, "name": "new advertiser f1bae6866ac4baa089cfa7722a5a93ae",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-23T15:54:45",
+        "modify_date": "2015-04-23T15:54:45"}, {"id": 39901, "name": "new advertiser
+        a594d5156b67b00c8fe957412bb459a9", "status_id": 1, "category_id": 1010, "key":
+        "", "create_date": "2015-04-23T15:54:45", "modify_date": "2015-04-23T15:54:45"}]'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 23:35:41 GMT
+  recorded_at: Thu, 23 Apr 2015 19:54:47 GMT
 recorded_with: VCR 2.9.3
