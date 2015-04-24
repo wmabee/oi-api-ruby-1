@@ -2,6 +2,9 @@ $LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'lib', 'oi_api')
 $LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'lib')
 $LOAD_PATH << File.join(File.dirname(__FILE__))
 
+require 'dotenv'
+Dotenv.load
+
 require 'oi_api'
 require 'rspec'
 require 'vcr'

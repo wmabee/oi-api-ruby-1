@@ -6,11 +6,11 @@ class Factory
   class << self
 
     def test_oi_username
-      ENV.fetch 'TEST_OI_USERNAME', 'cool_test_user_99'
+      ENV['TEST_OI_USERNAME']
     end
 
     def test_oi_password
-      ENV.fetch 'TEST_OI_PASSWORD', 'super_duper_strong_password'
+      ENV['TEST_OI_PASSWORD']
     end
 
     def api_client
