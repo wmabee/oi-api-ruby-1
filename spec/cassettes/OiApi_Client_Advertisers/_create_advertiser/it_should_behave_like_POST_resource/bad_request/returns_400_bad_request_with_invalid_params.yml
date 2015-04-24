@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 24 Apr 2015 20:00:50 GMT
+      - Fri, 24 Apr 2015 22:34:47 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,9 +34,49 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: "[]"
+      string: '[{"id": 40340, "name": "new advertiser feb713ed34483a15ce7503116d95271d",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-24T18:35:49",
+        "modify_date": "2015-04-24T18:35:49"}]'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 20:01:52 GMT
+  recorded_at: Fri, 24 Apr 2015 22:35:49 GMT
+- request:
+    method: delete
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40340/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 24 Apr 2015 22:34:47 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, PUT, DELETE, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
+        deleted"}'
+    http_version: 
+  recorded_at: Fri, 24 Apr 2015 22:35:50 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
@@ -54,7 +94,7 @@ http_interactions:
       message: BAD REQUEST
     headers:
       Date:
-      - Fri, 24 Apr 2015 20:00:51 GMT
+      - Fri, 24 Apr 2015 22:34:48 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -73,5 +113,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status": "Create Failed", "message": {"name": ["This field is required."]}}'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 20:01:53 GMT
+  recorded_at: Fri, 24 Apr 2015 22:35:50 GMT
 recorded_with: VCR 2.9.3

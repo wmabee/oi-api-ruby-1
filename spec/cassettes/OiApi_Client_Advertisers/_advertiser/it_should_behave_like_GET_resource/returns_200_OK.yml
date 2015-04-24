@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 24 Apr 2015 20:00:44 GMT
+      - Fri, 24 Apr 2015 22:34:39 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,14 +34,14 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"id": 40061, "name": "new advertiser d69b837f82d7de7c534a24905517af0e",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-24T16:01:45",
-        "modify_date": "2015-04-24T16:01:45"}]'
+      string: '[{"id": 40334, "name": "new advertiser 1c86b9a567ea8a06040c2bd570c5007b",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-24T18:35:40",
+        "modify_date": "2015-04-24T18:35:40"}]'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 20:01:46 GMT
+  recorded_at: Fri, 24 Apr 2015 22:35:41 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40061/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40334/
     body:
       encoding: US-ASCII
       string: ''
@@ -56,7 +56,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 24 Apr 2015 20:00:44 GMT
+      - Fri, 24 Apr 2015 22:34:39 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -76,13 +76,13 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 20:01:46 GMT
+  recorded_at: Fri, 24 Apr 2015 22:35:41 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
     body:
       encoding: UTF-8
-      string: '{"name":"new advertiser f41b22aac8b702e7f5ec1aa380d10f41","status_id":1,"category_id":1010}'
+      string: '{"name":"new advertiser c9badd7fc95376b2614fdbfbe77d19f9","status_id":1,"category_id":1010}'
     headers:
       Content-Type:
       - application/json
@@ -94,7 +94,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Fri, 24 Apr 2015 20:00:44 GMT
+      - Fri, 24 Apr 2015 22:34:39 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -112,12 +112,12 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 40062}'
+        created", "id": 40335}'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 20:01:46 GMT
+  recorded_at: Fri, 24 Apr 2015 22:35:42 GMT
 - request:
     method: get
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40062/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40335/
     body:
       encoding: US-ASCII
       string: ''
@@ -132,7 +132,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 24 Apr 2015 20:00:45 GMT
+      - Fri, 24 Apr 2015 22:34:40 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -149,9 +149,9 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"id": 40062, "name": "new advertiser f41b22aac8b702e7f5ec1aa380d10f41",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-24T16:01:46",
-        "modify_date": "2015-04-24T16:01:46"}'
+      string: '{"id": 40335, "name": "new advertiser c9badd7fc95376b2614fdbfbe77d19f9",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-24T18:35:41",
+        "modify_date": "2015-04-24T18:35:41"}'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 20:01:47 GMT
+  recorded_at: Fri, 24 Apr 2015 22:35:42 GMT
 recorded_with: VCR 2.9.3

@@ -1,5 +1,11 @@
 require 'spec_helper'
 
+require 'shared_examples_for_get_resource.rb'
+require 'shared_examples_for_get_resources.rb'
+require 'shared_examples_for_post_resource.rb'
+require 'shared_examples_for_put_resource.rb'
+require 'shared_examples_for_delete_resource.rb'
+
 RSpec.describe OiApi::Client::DataTransfers do
 
   before do
@@ -7,57 +13,33 @@ RSpec.describe OiApi::Client::DataTransfers do
     Factory.delete_all_offers
   end
 
-  let(:api) {
-    Factory.api_client
-  }
+  let(:api) { Factory.api_client }
 
-  let(:offer) {
-    api.offer(Factory.create_offer['id'])
-  }
+  let(:offer) { Factory.create_offer }
 
-  let(:data_transfer) {
-    Factory.create_data_transfer(offer_id: offer['id'])
-  }
+  let(:data_transfer) { Factory.create_data_transfer(offer_id: offer['id']) }
 
   context '#data_transfers', :vcr do
 
-    let(:response) {
+    before do
       Factory.create_data_transfer
       Factory.create_data_transfer
-      api.data_transfers
-    }
-
-    it 'returns correct http code' do
-      expect(response.code).to eql 200
     end
 
-    it 'returns Array' do
-      expect(response).to be_instance_of Array
-    end
+    let(:response) { api.data_transfers }
 
-    it 'returns all data transfers' do
-      expect(response.size).to eql 2
-    end
+    it_should_behave_like 'GET resources', :data_transfer
 
   end
 
   context '#data_transfer', :vcr do
 
-    let(:response) {
-      api.data_transfer(data_transfer['id'])
-    }
+    let(:response) { api.data_transfer(data_transfer['id']) }
 
-    it 'returns correct http code' do
-      expect(response.code).to eql 200
-    end
+    let(:not_found_response) { api.data_transfer(99999999999999) }
 
-    it 'returns Array' do
-      expect(response).to be_instance_of Hash
-    end
+    it_should_behave_like 'GET resource', :data_transfer
 
-    it 'returns a data transfer' do
-      expect(response.keys).to include(*Factory.valid_data_transfer_params.keys.map(&:to_s))
-    end
   end
 
   context '#create_data_transfer', :vcr do
@@ -66,134 +48,48 @@ RSpec.describe OiApi::Client::DataTransfers do
       api.create_data_transfer(offer['id'], Factory.valid_data_transfer_params)
     }
 
-    it 'creates a data transfer' do
-      expect(response).to include('status' => 'Create Successful')
-    end
+    let(:bad_response) {
+      invalid_params = Factory.valid_data_transfer_params
+      invalid_params.delete(:name)
+      api.create_data_transfer(offer['id'], invalid_params)
+    }
 
-    it 'returns correct http code' do
-      expect(response.code).to eql 201
-    end
+    let(:bad_response_message) {{ 'name' => ['This field is required.'] }}
+    let(:bad_response_status) { 'Create Failed' }
 
-    context 'bad request' do
-
-      let(:invalid_params) {
-        _prms = Factory.valid_data_transfer_params
-        _prms.delete(:name)
-        _prms
-      }
-
-      let(:response) {
-        api.create_data_transfer(offer['id'], invalid_params)
-      }
-
-      it 'returns 400 bad request with invalid params' do
-        expect(response.code).to eql 400
-      end
-
-      it 'returns an error message' do
-        expect(response).to eql(
-          'status' => 'Create Failed',
-          'message' => { 'name' => ['This field is required.'] }
-        )
-      end
-
-    end
+    it_should_behave_like 'POST resource', :data_transfer
 
   end
 
   context '#update_data_transfer', :vcr do
 
-    let(:update_params) {{
-      status_id: 2
-    }}
-
     let(:response) {
-      api.update_data_transfer(offer['id'], data_transfer['id'], update_params)
+      api.update_data_transfer(offer['id'], data_transfer['id'], { status_id: 2 })
     }
 
-    it 'updates a data transfer' do
-      response
-      expect(api.data_transfer(data_transfer['id'])['status_id']).to eql update_params[:status_id]
-    end
+    let(:bad_response) {
+      api.update_data_transfer(offer['id'], data_transfer['id'], { status_id: 10 })
+    }
+    let(:bad_response_message) {{ 'status_id' => ['Invalid Status Id'] }}
+    let(:bad_response_status) { 'Update Failed' }
 
-    it 'returns success status' do
-      expect(response['status']).to eql('Update Successful')
-    end
 
-    it 'returns 200 OK' do
-      expect(response.code).to eql 200
-    end
+    let(:not_found_response) {
+      api.update_data_transfer(offer['id'], 99999999999999, status_id: 2)
+    }
 
-    context 'when data transfer id not found' do
-
-      let(:bad_id) { 99999999999999 }
-
-      let(:response) {
-        api.update_data_transfer(offer['id'], bad_id, status_id: 2)
-      }
-
-      it 'returns 404' do
-        expect(response.code).to eql 404
-      end
-
-      it 'returns not found error message' do
-        expect(response['message']).to eql 'Data Transfer not found under this offer.'
-      end
-
-      it 'returns error status' do
-        expect(response['status']).to eql 'Update Failed'
-      end
-
-    end
+    it_should_behave_like 'PUT resource', :data_transfer
 
   end
 
   context '#delete_data_transfer', :vcr do
 
-    let(:response) {
-      api.delete_data_transfer(data_transfer['id'])
-    }
+    let(:response) { api.delete_data_transfer(data_transfer['id']) }
 
-    it 'deletes a data transfer' do
-      response
-      expect(api.data_transfer(data_transfer['id']).code).to eql 404
-    end
+    let(:not_found_response) { api.delete_data_transfer(99999999999999) }
 
-    it 'returns correct status' do
-      expect(response['status']).to eql 'Request Successful'
-    end
+    it_should_behave_like 'DELETE resource', :data_transfer
 
-    it 'returns correct message' do
-      expect(response['message']).to eql 'DataTransfer Succesfully Deleted'
-    end
-
-    it 'returns 200 OK' do
-      expect(response.code).to eql 200
-    end
-
-    context 'when advertiser_id not found' do
-
-      let(:bad_id) { 99999999999999 }
-
-      let(:response) {
-        api.delete_data_transfer(bad_id)
-      }
-
-      it 'returns not found error message' do
-        expect(response['message']).to eql 'Record not found'
-      end
-
-      it 'returns not found error message' do
-        expect(response['status']).to eql 'error'
-      end
-
-      it 'returns 404' do
-        expect(response.code).to eql 404
-      end
-
-    end
   end
 
 end
-
-

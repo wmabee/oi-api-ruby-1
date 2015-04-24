@@ -1,4 +1,4 @@
-RSpec.shared_examples 'GET resources' do
+RSpec.shared_examples 'GET resources' do |resource_name|
 
   it 'returns 200 OK' do
     expect(response.code).to eql 200

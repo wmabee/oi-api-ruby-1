@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 24 Apr 2015 20:11:25 GMT
+      - Fri, 24 Apr 2015 22:34:21 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -36,7 +36,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 20:12:27 GMT
+  recorded_at: Fri, 24 Apr 2015 22:35:24 GMT
 - request:
     method: delete
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/99999999999999/
@@ -54,7 +54,7 @@ http_interactions:
       message: FORBIDDEN
     headers:
       Date:
-      - Fri, 24 Apr 2015 20:11:25 GMT
+      - Fri, 24 Apr 2015 22:34:22 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -73,5 +73,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status": "Request Failed", "message": "Operation not allowed"}'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 20:12:27 GMT
+  recorded_at: Fri, 24 Apr 2015 22:35:24 GMT
 recorded_with: VCR 2.9.3

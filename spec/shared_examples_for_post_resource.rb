@@ -1,10 +1,11 @@
 RSpec.shared_examples 'POST resource' do |resource_name|
 
-  it 'creates a new resource' do
-    expect(response).to include(
-      'status' => 'Create Successful',
-      'message' => "#{resource_name.capitalize} successfully created"
-    )
+  it 'returns a success message' do
+    expect(response['message']).to eql("#{resource_name.capitalize} successfully created")
+  end
+
+  it 'returns a success status' do
+    expect(response['status']).to eql('Request Successful')
   end
 
   it 'returns 201 created' do
@@ -18,18 +19,11 @@ RSpec.shared_examples 'POST resource' do |resource_name|
     end
 
     it 'returns an error message' do
-      expect(bad_response).to eql(
-        'status' => 'Create Failed',
-        'message' => {
-          'name' => ['This field is required.']
-        }
-      )
+      expect(bad_response['message']).to eql(bad_response_message)
     end
 
-    it 'returns 400 bad request when name already exists' do
-      _prms = Factory.public_send("valid_#{resource_name}_params")
-      api.public_send("create_#{resource_name}", _prms)
-      expect(api.public_send("create_#{resource_name}", _prms).code).to eql 400
+    it 'returns an error status' do
+      expect(bad_response['status']).to eql(bad_response_status)
     end
 
   end

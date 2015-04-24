@@ -16,15 +16,15 @@ RSpec.shared_examples 'GET resource' do |resource_name|
   context "when #{resource_name}_id not found" do
 
     it 'returns not found error message' do
-      expect(bad_response['message']).to eql 'Record not found'
+      expect(not_found_response['message']).to eql 'Record not found'
     end
 
     it 'returns not found error message' do
-      expect(bad_response['status']).to eql 'error'
+      expect(not_found_response['status']).to eql 'Retrieve Failed'
     end
 
     it 'returns 404' do
-      expect(bad_response.code).to eql 404
+      expect(not_found_response.code).to eql 404
     end
 
   end

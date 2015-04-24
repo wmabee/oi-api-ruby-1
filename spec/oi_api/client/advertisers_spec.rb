@@ -12,9 +12,7 @@ RSpec.describe OiApi::Client::Advertisers do
     Factory.delete_all_advertisers
   end
 
-  let(:api) {
-    Factory.api_client
-  }
+  let(:api) { Factory.api_client }
 
   let(:advertiser) { Factory.create_advertiser }
 
@@ -25,9 +23,7 @@ RSpec.describe OiApi::Client::Advertisers do
       Factory.create_advertiser
     end
 
-    let(:response) {
-      api.advertisers
-    }
+    let(:response) { api.advertisers }
 
     it_should_behave_like 'GET resources', :advertiser
 
@@ -37,7 +33,7 @@ RSpec.describe OiApi::Client::Advertisers do
 
     let(:response) { api.advertiser(advertiser['id']) }
 
-    let(:bad_response) { api.advertiser(99999999999999) }
+    let(:not_found_response) { api.advertiser(99999999999999) }
 
     it_should_behave_like 'GET resource', :advertiser
 
@@ -45,15 +41,16 @@ RSpec.describe OiApi::Client::Advertisers do
 
   context '#create_advertiser', :vcr do
 
-    let(:response) {
-      api.create_advertiser(Factory.valid_advertiser_params)
-    }
+    let(:response) { api.create_advertiser(Factory.valid_advertiser_params) }
 
     let(:bad_response) {
       invalid_params = Factory.valid_advertiser_params
       invalid_params.delete(:name)
       api.create_advertiser(invalid_params)
     }
+
+    let(:bad_response_message) {{ 'name' => ['This field is required.'] }}
+    let(:bad_response_status) { 'Create Failed' }
 
     it_should_behave_like 'POST resource', :advertiser
 
@@ -63,31 +60,24 @@ RSpec.describe OiApi::Client::Advertisers do
 
     let(:update_params) {{ status_id: 2 }}
 
-    let(:response) {
-      api.update_advertiser(advertiser['id'], update_params)
-    }
+    let(:response) { api.update_advertiser(advertiser['id'], update_params) }
 
-    let(:bad_response) {
-      api.update_advertiser(advertiser['id'], { status_id: 999 })
-    }
+    let(:bad_response) { api.update_advertiser(advertiser['id'], { status_id: 999 }) }
 
-    let(:not_found_response) {
-      api.update_advertiser(99999999999999, update_params)
-    }
+    let(:bad_response_message) {{ 'status_id' => ['Invalid Status Id'] }}
+    let(:bad_response_status) { 'Update Failed' }
+
+    let(:not_found_response) { api.update_advertiser(99999999999999, update_params) }
 
     it_should_behave_like 'PUT resource', :advertiser
 
   end
 
-  context '#delete_advertiser', :vcr, :focus do
+  context '#delete_advertiser', :vcr do
 
-    let(:response) {
-      api.delete_advertiser(advertiser['id'])
-    }
+    let(:response) { api.delete_advertiser(advertiser['id']) }
 
-    let(:not_found_response) {
-      api.delete_advertiser(99999999999999)
-    }
+    let(:not_found_response) { api.delete_advertiser(99999999999999) }
 
     it_should_behave_like 'DELETE resource', :advertiser
 
