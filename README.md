@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/jspillers/oi-api-ruby/badges/gpa.svg)](https://codeclimate.com/github/jspillers/oi-api-ruby)
+[![Test Coverage](https://codeclimate.com/github/jspillers/oi-api-ruby/badges/coverage.svg)](https://codeclimate.com/github/jspillers/oi-api-ruby)
+
 # OiApi Ruby
 
 TODO: Write a gem description
