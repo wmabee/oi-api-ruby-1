@@ -1,5 +1,11 @@
 require 'spec_helper'
 
+require 'shared_examples_for_get_resource.rb'
+require 'shared_examples_for_get_resources.rb'
+require 'shared_examples_for_post_resource.rb'
+require 'shared_examples_for_put_resource.rb'
+require 'shared_examples_for_delete_resource.rb'
+
 RSpec.describe OiApi::Client::Advertisers do
 
   before do
@@ -10,69 +16,30 @@ RSpec.describe OiApi::Client::Advertisers do
     Factory.api_client
   }
 
-  let(:advertiser) {
-    Factory.create_advertiser
-  }
+  let(:advertiser) { Factory.create_advertiser }
 
   context '#advertisers', :vcr do
 
+    before do
+      Factory.create_advertiser
+      Factory.create_advertiser
+    end
+
     let(:response) {
-      Factory.create_advertiser
-      Factory.create_advertiser
       api.advertisers
     }
 
-    it 'returns correct http code' do
-      expect(response.code).to eql 200
-    end
-
-    it 'returns HTTParty::Response' do
-      expect(response).to be_instance_of Array
-    end
-
-    it 'returns all advertisers' do
-      expect(response.size).to eql 2
-    end
+    it_should_behave_like 'GET resources', :advertiser
 
   end
 
   context '#advertiser', :vcr do
 
-    let(:response) {
-      api.advertiser(advertiser['id'])
-    }
+    let(:response) { api.advertiser(advertiser['id']) }
 
-    it 'returns correct http code' do
-      expect(response.code).to eql 200
-    end
+    let(:bad_response) { api.advertiser(99999999999999) }
 
-    it 'returns HTTParty::Response' do
-      expect(response).to be_instance_of Hash
-    end
-
-    it 'returns the advertiser' do
-      expect(response.keys).to include *Factory.valid_advertiser_params.keys.map(&:to_s)
-    end
-
-    context 'when advertiser_id not found' do
-
-      let(:bad_id) { 99999999999999 }
-
-      let(:response) { api.advertiser(bad_id) }
-
-      it 'returns not found error message' do
-        expect(response['message']).to eql 'Record not found'
-      end
-
-      it 'returns not found error message' do
-        expect(response['status']).to eql 'error'
-      end
-
-      it 'returns 404' do
-        expect(response.code).to eql 404
-      end
-
-    end
+    it_should_behave_like 'GET resource', :advertiser
 
   end
 
@@ -82,128 +49,47 @@ RSpec.describe OiApi::Client::Advertisers do
       api.create_advertiser(Factory.valid_advertiser_params)
     }
 
-    it 'creates an advertiser' do
-      expect(response).to include(
-        'status' => 'Create Successful',
-        'message' => 'Advertiser successfully created'
-      )
-    end
+    let(:bad_response) {
+      invalid_params = Factory.valid_advertiser_params
+      invalid_params.delete(:name)
+      api.create_advertiser(invalid_params)
+    }
 
-    it 'returns 201 created' do
-      expect(response.code).to eql 201
-    end
-
-    context 'bad request' do
-
-      let(:invalid_params) {
-        _prms = Factory.valid_advertiser_params
-        _prms.delete(:name)
-        _prms
-      }
-
-      let(:response) {
-        api.create_advertiser(invalid_params)
-      }
-
-      it 'returns 400 bad request with invalid params' do
-        expect(response.code).to eql 400
-      end
-
-      it 'returns an error message' do
-        expect(response).to eql(
-          'status' => 'Create Failed',
-          'message' => {
-            'name' => ['This field is required.']
-          }
-        )
-      end
-
-      it 'returns 400 bad request when name already exists' do
-        _prms = Factory.valid_advertiser_params
-        api.create_advertiser(_prms)
-        expect(api.create_advertiser(_prms).code).to eql 400
-      end
-
-    end
+    it_should_behave_like 'POST resource', :advertiser
 
   end
 
   context '#update_advertiser', :vcr do
 
+    let(:update_params) {{ status_id: 2 }}
+
     let(:response) {
-      api.update_advertiser(advertiser['id'], status_id: 2)
+      api.update_advertiser(advertiser['id'], update_params)
     }
 
-    it 'updates an advertiser' do
-      expect(response).to eql('status' => 'Update Successful')
-    end
+    let(:bad_response) {
+      api.update_advertiser(advertiser['id'], { status_id: 999 })
+    }
 
-    it 'returns 200 OK' do
-      expect(response.code).to eql 200
-    end
+    let(:not_found_response) {
+      api.update_advertiser(99999999999999, update_params)
+    }
 
-    context 'when advertiser_id not found' do
-
-      let(:bad_id) { 99999999999999 }
-
-      let(:response) {
-        api.update_advertiser(bad_id, status_id: 2)
-      }
-
-      it 'returns 404' do
-        expect(response.code).to eql 404
-      end
-
-      it 'returns not found error message' do
-        expect(response['message']).to eql 'Record not found'
-      end
-
-      it 'returns error status' do
-        expect(response['status']).to eql 'error'
-      end
-
-    end
+    it_should_behave_like 'PUT resource', :advertiser
 
   end
 
-  context '#delete_advertiser', :vcr do
+  context '#delete_advertiser', :vcr, :focus do
 
     let(:response) {
       api.delete_advertiser(advertiser['id'])
     }
 
-    it 'deletes an advertiser' do
-      expect(response).to include(
-        'status' => 'Delete Successful',
-        'message' => 'Advertiser Succesfully deleted'
-      )
-    end
+    let(:not_found_response) {
+      api.delete_advertiser(99999999999999)
+    }
 
-    it 'returns 200 OK' do
-      expect(response.code).to eql 200
-    end
-
-    context 'when advertiser_id not found' do
-
-      let(:bad_id) { 99999999999999 }
-
-      let(:response) {
-        api.delete_advertiser(bad_id)
-      }
-
-      it 'returns not found error message' do
-        expect(response['message']).to eql 'Record not found'
-      end
-
-      it 'returns not found error message' do
-        expect(response['status']).to eql 'error'
-      end
-
-      it 'returns 404' do
-        expect(response.code).to eql 404
-      end
-
-    end
+    it_should_behave_like 'DELETE resource', :advertiser
 
   end
 

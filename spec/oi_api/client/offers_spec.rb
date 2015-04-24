@@ -136,6 +136,27 @@ RSpec.describe OiApi::Client::Offers do
       expect(response.code).to eql 200
     end
 
+    context 'bad request' do
+
+      let(:invalid_params) {{ name: offer['name']}}
+
+      let(:response) {
+        api.update_offer(offer['id'], invalid_params)
+      }
+
+      it 'returns 400 bad request with invalid params' do
+        expect(response.code).to eql 400
+      end
+
+      it 'returns an error message' do
+        expect(response).to eql(
+          'status'=>'Update Failed',
+          'message'=>'Name already exists'
+        )
+      end
+
+    end
+
     context 'when offer_id not found' do
 
       let(:bad_id) { 99999999999999 }

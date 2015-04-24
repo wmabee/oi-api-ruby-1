@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 24 Apr 2015 15:10:01 GMT
+      - Fri, 24 Apr 2015 20:00:46 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,12 +34,14 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: "[]"
+      string: '[{"id": 40063, "name": "new advertiser b3391c317ee53318dffcb3c47e91c83b",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-24T16:01:47",
+        "modify_date": "2015-04-24T16:01:47"}]'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 15:11:03 GMT
+  recorded_at: Fri, 24 Apr 2015 20:01:48 GMT
 - request:
-    method: get
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
+    method: delete
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40063/
     body:
       encoding: US-ASCII
       string: ''
@@ -54,7 +56,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 24 Apr 2015 15:10:01 GMT
+      - Fri, 24 Apr 2015 20:00:46 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -62,7 +64,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Allow:
-      - GET, POST, HEAD, OPTIONS
+      - GET, PUT, DELETE, HEAD, OPTIONS
       Connection:
       - close
       Transfer-Encoding:
@@ -71,15 +73,16 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: "[]"
+      string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
+        deleted"}'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 15:11:03 GMT
+  recorded_at: Fri, 24 Apr 2015 20:01:48 GMT
 - request:
-    method: put
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/99999999999999/
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/99999999999999/
     body:
-      encoding: UTF-8
-      string: '{"status_id":2}'
+      encoding: US-ASCII
+      string: ''
     headers:
       Content-Type:
       - application/json
@@ -87,11 +90,11 @@ http_interactions:
       - OiApiRuby Gem 0.1.1
   response:
     status:
-      code: 404
-      message: NOT FOUND
+      code: 400
+      message: BAD REQUEST
     headers:
       Date:
-      - Fri, 24 Apr 2015 15:10:01 GMT
+      - Fri, 24 Apr 2015 20:00:47 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -99,7 +102,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Allow:
-      - GET, PUT, HEAD, OPTIONS
+      - GET, PUT, DELETE, HEAD, OPTIONS
       Connection:
       - close
       Transfer-Encoding:
@@ -108,7 +111,7 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"status": "Update Failed", "message": "Offer not found"}'
+      string: '{"status": "Retrieve Failed", "message": "No permission to view advertiser."}'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 15:11:03 GMT
+  recorded_at: Fri, 24 Apr 2015 20:01:49 GMT
 recorded_with: VCR 2.9.3

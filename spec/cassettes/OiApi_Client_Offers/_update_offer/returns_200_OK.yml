@@ -10,14 +10,14 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - OiApiRuby Gem 0.0.1
+      - OiApiRuby Gem 0.1.1
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 23 Apr 2015 19:56:43 GMT
+      - Fri, 24 Apr 2015 15:09:51 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -34,16 +34,16 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '[{"id": 39973, "name": "new advertiser 5acc96c0f8cbb9b2cee33c87686bf957",
-        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-23T15:58:15",
-        "modify_date": "2015-04-23T15:58:15"}, {"id": 39974, "name": "new advertiser
-        c63986e09d8898089c59714bb979da08", "status_id": 1, "category_id": 1010, "key":
-        "", "create_date": "2015-04-23T15:58:16", "modify_date": "2015-04-23T15:58:16"}]'
+      string: '[{"id": 40010, "name": "new advertiser ec3bc8520cd173a017f6f6d6d952240d",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-24T11:10:51",
+        "modify_date": "2015-04-24T11:10:51"}, {"id": 40011, "name": "new advertiser
+        47b0805ed1f71586136b69d513af921e", "status_id": 1, "category_id": 1010, "key":
+        "", "create_date": "2015-04-24T11:10:51", "modify_date": "2015-04-24T11:10:51"}]'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 19:58:19 GMT
+  recorded_at: Fri, 24 Apr 2015 15:10:53 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39973/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40010/
     body:
       encoding: US-ASCII
       string: ''
@@ -51,14 +51,14 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - OiApiRuby Gem 0.0.1
+      - OiApiRuby Gem 0.1.1
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 23 Apr 2015 19:56:44 GMT
+      - Fri, 24 Apr 2015 15:09:52 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -78,10 +78,10 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 19:58:19 GMT
+  recorded_at: Fri, 24 Apr 2015 15:10:54 GMT
 - request:
     method: delete
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/39974/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40011/
     body:
       encoding: US-ASCII
       string: ''
@@ -89,14 +89,14 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - OiApiRuby Gem 0.0.1
+      - OiApiRuby Gem 0.1.1
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 23 Apr 2015 19:56:44 GMT
+      - Fri, 24 Apr 2015 15:09:52 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -116,7 +116,7 @@ http_interactions:
       string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
         deleted"}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 19:58:20 GMT
+  recorded_at: Fri, 24 Apr 2015 15:10:54 GMT
 - request:
     method: get
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
@@ -127,14 +127,14 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - OiApiRuby Gem 0.0.1
+      - OiApiRuby Gem 0.1.1
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 23 Apr 2015 19:56:45 GMT
+      - Fri, 24 Apr 2015 15:09:52 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -153,25 +153,25 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 19:58:20 GMT
+  recorded_at: Fri, 24 Apr 2015 15:10:54 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
     body:
       encoding: UTF-8
-      string: '{"name":"new advertiser 7079b43dce8b8d06b1d3174b7fc83ed5","status_id":1,"category_id":1010}'
+      string: '{"name":"new advertiser 1fc6b53869207872495cbffe45686d41","status_id":1,"category_id":1010}'
     headers:
       Content-Type:
       - application/json
       User-Agent:
-      - OiApiRuby Gem 0.0.1
+      - OiApiRuby Gem 0.1.1
   response:
     status:
       code: 201
       message: CREATED
     headers:
       Date:
-      - Thu, 23 Apr 2015 19:56:45 GMT
+      - Fri, 24 Apr 2015 15:09:53 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -189,27 +189,27 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 39975}'
+        created", "id": 40012}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 19:58:20 GMT
+  recorded_at: Fri, 24 Apr 2015 15:10:55 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
     body:
       encoding: UTF-8
-      string: '{"name":"new advertiser 96e1bd19e46d1834278f989812fcfdd2","status_id":1,"category_id":1010}'
+      string: '{"name":"new advertiser 0df32f0faa870f32f23f47e21b04c792","status_id":1,"category_id":1010}'
     headers:
       Content-Type:
       - application/json
       User-Agent:
-      - OiApiRuby Gem 0.0.1
+      - OiApiRuby Gem 0.1.1
   response:
     status:
       code: 201
       message: CREATED
     headers:
       Date:
-      - Thu, 23 Apr 2015 19:56:45 GMT
+      - Fri, 24 Apr 2015 15:09:53 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -227,30 +227,30 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Create Successful", "message": "Advertiser successfully
-        created", "id": 39976}'
+        created", "id": 40013}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 19:58:21 GMT
+  recorded_at: Fri, 24 Apr 2015 15:10:55 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
     body:
       encoding: UTF-8
-      string: '{"advertiser_id":39975,"name":"Special Product 30deef95ee937a2492f2a2427cc03b24","category_id":1010,"status_id":9,"headline":"Buy
-        our product today 4ee7e560edb7953c29d05199bd61e235","body":"Try for FREE for
-        a limited time only. This is your one-and-only chance! d8d84b1f93c4fcf014f2d7d9ab23f9b0","cpl_price":1.0,"global_cap":1000,"monthly_cap":300,"daily_cap":10,"image1":"http://www.opt-intelligence.com/images/cats120.png","image2":"http://www.opt-intelligence.com/images/cats88.png","data_points":["EM","FN"],"targeting":{"min_age":18,"max_age":45,"zip":{"include":true,"zip_codes":["14226","10009","10023","11211"]},"gender":"m","country":{"include":true,"countries":["USA"]},"third_party":{}},"comment":"Hello
+      string: '{"advertiser_id":40012,"name":"Special Product 70f7fd9f1361215a7e8a0500a48f08f3","category_id":1010,"status_id":9,"headline":"Buy
+        our product today 68db80263f6d4193463862c4ff8e79dd","body":"Try for FREE for
+        a limited time only. This is your one-and-only chance! 44428582b32ecc5a57cd48d22e187a8c","cpl_price":1.0,"global_cap":1000,"monthly_cap":300,"daily_cap":10,"image1":"http://www.opt-intelligence.com/images/cats120.png","image2":"http://www.opt-intelligence.com/images/cats88.png","data_points":["EM","FN"],"targeting":{"min_age":18,"max_age":45,"zip":{"include":true,"zip_codes":["14226","10009","10023","11211"]},"gender":"m","country":{"include":true,"countries":["USA"]},"third_party":{}},"comment":"Hello
         there"}'
     headers:
       Content-Type:
       - application/json
       User-Agent:
-      - OiApiRuby Gem 0.0.1
+      - OiApiRuby Gem 0.1.1
   response:
     status:
       code: 201
       message: CREATED
     headers:
       Date:
-      - Thu, 23 Apr 2015 19:56:46 GMT
+      - Fri, 24 Apr 2015 15:09:53 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -268,12 +268,12 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Request Successful", "message": "Offer successfully created",
-        "id": 79563}'
+        "id": 79574}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 19:58:22 GMT
+  recorded_at: Fri, 24 Apr 2015 15:10:56 GMT
 - request:
     method: put
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/79563/
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/79574/
     body:
       encoding: UTF-8
       string: '{"headline":"Last chance to buy our product","cpl_price":2.0}'
@@ -281,14 +281,14 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - OiApiRuby Gem 0.0.1
+      - OiApiRuby Gem 0.1.1
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 23 Apr 2015 19:56:47 GMT
+      - Fri, 24 Apr 2015 15:09:55 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -306,7 +306,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status": "Request Succesful", "message": "Offer successfully updated",
-        "id": 79563}'
+        "id": 79574}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 19:58:23 GMT
+  recorded_at: Fri, 24 Apr 2015 15:10:57 GMT
 recorded_with: VCR 2.9.3

@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 24 Apr 2015 15:10:01 GMT
+      - Fri, 24 Apr 2015 20:11:25 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -36,10 +36,10 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 15:11:03 GMT
+  recorded_at: Fri, 24 Apr 2015 20:12:27 GMT
 - request:
-    method: get
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
+    method: delete
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/99999999999999/
     body:
       encoding: US-ASCII
       string: ''
@@ -50,11 +50,11 @@ http_interactions:
       - OiApiRuby Gem 0.1.1
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: FORBIDDEN
     headers:
       Date:
-      - Fri, 24 Apr 2015 15:10:01 GMT
+      - Fri, 24 Apr 2015 20:11:25 GMT
       Server:
       - Apache/2.2.15 (CentOS)
       Vary:
@@ -62,7 +62,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Allow:
-      - GET, POST, HEAD, OPTIONS
+      - GET, PUT, DELETE, HEAD, OPTIONS
       Connection:
       - close
       Transfer-Encoding:
@@ -71,44 +71,7 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: "[]"
+      string: '{"status": "Request Failed", "message": "Operation not allowed"}'
     http_version: 
-  recorded_at: Fri, 24 Apr 2015 15:11:03 GMT
-- request:
-    method: put
-    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/99999999999999/
-    body:
-      encoding: UTF-8
-      string: '{"status_id":2}'
-    headers:
-      Content-Type:
-      - application/json
-      User-Agent:
-      - OiApiRuby Gem 0.1.1
-  response:
-    status:
-      code: 404
-      message: NOT FOUND
-    headers:
-      Date:
-      - Fri, 24 Apr 2015 15:10:01 GMT
-      Server:
-      - Apache/2.2.15 (CentOS)
-      Vary:
-      - Accept,Cookie
-      X-Frame-Options:
-      - SAMEORIGIN
-      Allow:
-      - GET, PUT, HEAD, OPTIONS
-      Connection:
-      - close
-      Transfer-Encoding:
-      - chunked
-      Content-Type:
-      - application/json
-    body:
-      encoding: UTF-8
-      string: '{"status": "Update Failed", "message": "Offer not found"}'
-    http_version: 
-  recorded_at: Fri, 24 Apr 2015 15:11:03 GMT
+  recorded_at: Fri, 24 Apr 2015 20:12:27 GMT
 recorded_with: VCR 2.9.3
