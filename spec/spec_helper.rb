@@ -1,5 +1,6 @@
 $LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'lib', 'oi_api')
 $LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'lib')
+$LOAD_PATH << File.join(File.dirname(__FILE__), 'support')
 $LOAD_PATH << File.join(File.dirname(__FILE__))
 
 require 'dotenv'
