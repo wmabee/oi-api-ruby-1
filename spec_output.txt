@@ -1,0 +1,341 @@
+OiApi::Client::DataTransfers
+  #data_transfer
+    it should behave like GET resource
+      returns HTTParty::Response
+      returns 200 OK
+      returns the resource
+      when data_transfer_id not found
+        returns not found error message
+        returns not found error message (FAILED - 1)
+        returns 404 (FAILED - 2)
+  #update_data_transfer
+    it should behave like PUT resource
+      returns the correct message (FAILED - 3)
+      returns the correct status (FAILED - 4)
+      returns 200 OK
+      when data_transfer not found
+        returns not found error message (FAILED - 5)
+        returns 404 (FAILED - 6)
+        returns error status
+      bad request
+        returns an error message (FAILED - 7)
+        returns 400 bad request with invalid params
+        returns an error status
+  #delete_data_transfer
+    it should behave like DELETE resource
+      returns the correct status (FAILED - 8)
+      deletes a data transfer (FAILED - 9)
+      returns the correct message (FAILED - 10)
+      returns 200 OK
+      when data_transfer not found
+        returns not found error status (FAILED - 11)
+        returns not found error message (FAILED - 12)
+        returns 404 (FAILED - 13)
+  #data_transfers
+    it should behave like GET resources
+      returns HTTParty::Response
+      returns 200 OK
+      returns all resources
+  #create_data_transfer
+    it should behave like POST resource
+      returns a success status (FAILED - 14)
+      returns a success message (FAILED - 15)
+      returns 201 created (FAILED - 16)
+      bad request
+        returns an error message
+        returns 400 bad request with invalid params
+        returns an error status
+
+OiApi::Client::Reports
+  #reports with query params
+    retrieves the last 60 days of data
+  #reports
+    returns a report summary
+    it should behave like GET resources
+      returns HTTParty::Response
+      returns 200 OK
+      returns all resources
+
+OiApi
+  has a version
+  configuration
+    .password
+      defaults nil
+    .username
+      defaults nil
+    .user_agent
+      has a default
+    .content_type
+      has a default
+    .format
+      has a default
+    .api_endpoint
+      has a default
+
+OiApi::Client::Advertisers
+  #advertiser
+    it should behave like GET resource
+      returns HTTParty::Response
+      returns 200 OK
+      returns the resource
+      when advertiser_id not found
+        returns not found error message
+        returns not found error message (FAILED - 17)
+        returns 404 (FAILED - 18)
+  #update_advertiser
+    it should behave like PUT resource
+      returns the correct message (FAILED - 19)
+      returns the correct status (FAILED - 20)
+      returns 200 OK
+      when advertiser not found
+        returns not found error message (FAILED - 21)
+        returns 404 (FAILED - 22)
+        returns error status
+      bad request
+        returns an error message
+        returns 400 bad request with invalid params
+        returns an error status
+  #delete_advertiser
+    it should behave like DELETE resource
+      returns the correct status
+      deletes a data transfer (FAILED - 23)
+      returns the correct message
+      returns 200 OK
+      when advertiser not found
+        returns not found error status
+        returns not found error message (FAILED - 24)
+        returns 404 (FAILED - 25)
+  #advertisers
+    it should behave like GET resources
+      returns HTTParty::Response
+      returns 200 OK
+      returns all resources
+  #create_advertiser
+    it should behave like POST resource
+      returns a success status (FAILED - 26)
+      returns a success message
+      returns 201 created
+      bad request
+        returns an error message
+        returns 400 bad request with invalid params
+        returns an error status
+
+OiApi::Client::Offers
+  #offer
+    it should behave like GET resource
+      returns HTTParty::Response
+      returns 200 OK
+      returns the resource
+      when offer_id not found
+        returns not found error message (FAILED - 27)
+        returns not found error message (FAILED - 28)
+        returns 404 (FAILED - 29)
+  #update_offer
+    it should behave like PUT resource
+      returns the correct message
+      returns the correct status (FAILED - 30)
+      returns 200 OK
+      when offer not found
+        returns not found error message
+        returns 404
+        returns error status
+      bad request
+        returns an error message
+        returns 400 bad request with invalid params
+        returns an error status
+  #offers
+    it should behave like GET resources
+      returns HTTParty::Response
+      returns 200 OK
+      returns all resources
+  #create_offer
+    it should behave like POST resource
+      returns a success status
+      returns a success message
+      returns 201 created
+      bad request
+        returns an error message
+        returns 400 bad request with invalid params
+        returns an error status
+
+Failures:
+
+  1) OiApi::Client::DataTransfers#data_transfer it should behave like GET resource when data_transfer_id not found returns not found error message
+     Failure/Error: expect(not_found_response['message']).to eql 'Record not found'
+       
+       expected: "Record not found"
+            got: "No permission to view data transfer for offer."
+       
+  2) OiApi::Client::DataTransfers#data_transfer it should behave like GET resource when data_transfer_id not found returns 404
+     Failure/Error: expect(not_found_response.code).to eql 404
+       
+       expected: 404
+            got: 400
+       
+  3) OiApi::Client::DataTransfers#update_data_transfer it should behave like PUT resource returns the correct message
+     Failure/Error: expect(response['message']).to eql("#{titleized_resource(resource_name)} successfully updated")
+       
+       expected: "Data Transfer successfully updated"
+            got: nil
+       
+  4) OiApi::Client::DataTransfers#update_data_transfer it should behave like PUT resource returns the correct status
+     Failure/Error: expect(response['status']).to eql('Request Successful')
+       
+       expected: "Request Successful"
+            got: "Update Successful"
+       
+  5) OiApi::Client::DataTransfers#update_data_transfer it should behave like PUT resource when data_transfer not found returns not found error message
+     Failure/Error: expect(not_found_response['message']).to eql "#{titleized_resource(resource_name)} not found"
+       
+       expected: "Data Transfer not found"
+            got: "Data Transfer not found under this offer."
+       
+  6) OiApi::Client::DataTransfers#update_data_transfer it should behave like PUT resource when data_transfer not found returns 404
+     Failure/Error: expect(not_found_response.code).to eql 404
+       
+       expected: 404
+            got: 400
+       
+  7) OiApi::Client::DataTransfers#update_data_transfer it should behave like PUT resource bad request returns an error message
+     Failure/Error: expect(bad_response['message']).to eql(bad_response_message)
+       
+       expected: {"status_id"=>["Invalid Status Id"]}
+            got: {"status_id"=>["not a valid status"]}
+
+  8) OiApi::Client::DataTransfers#delete_data_transfer it should behave like DELETE resource returns the correct status
+     Failure/Error: expect(response['status']).to eql('Delete Successful')
+       
+       expected: "Delete Successful"
+            got: "Request Successful"
+       
+  9) OiApi::Client::DataTransfers#delete_data_transfer it should behave like DELETE resource deletes a data transfer
+     Failure/Error: expect(api.public_send(resource_name, resource_id).code).to eql 404
+       
+       expected: 404
+            got: 400
+       
+  10) OiApi::Client::DataTransfers#delete_data_transfer it should behave like DELETE resource returns the correct message
+     Failure/Error: expect(response['message']).to eql("#{titleized_resource(resource_name)} Succesfully deleted")
+       
+       expected: "Data Transfer Succesfully deleted"
+            got: "DataTransfer Succesfully Deleted"
+       
+  11) OiApi::Client::DataTransfers#delete_data_transfer it should behave like DELETE resource when data_transfer not found returns not found error status
+     Failure/Error: expect(not_found_response['status']).to eql 'Request Failed'
+       
+       expected: "Request Failed"
+            got: "Delete Failed"
+       
+  12) OiApi::Client::DataTransfers#delete_data_transfer it should behave like DELETE resource when data_transfer not found returns not found error message
+     Failure/Error: expect(not_found_response['message']).to eql 'Record not found'
+       
+       expected: "Record not found"
+            got: "No permission to update data transfer for offer."
+       
+  13) OiApi::Client::DataTransfers#delete_data_transfer it should behave like DELETE resource when data_transfer not found returns 404
+     Failure/Error: expect(not_found_response.code).to eql 404
+       
+       expected: 404
+            got: 400
+       
+  14) OiApi::Client::DataTransfers#create_data_transfer it should behave like POST resource returns a success status
+     Failure/Error: expect(response['status']).to eql('Request Successful')
+       
+       expected: "Request Successful"
+            got: "Create Successful"
+       
+  15) OiApi::Client::DataTransfers#create_data_transfer it should behave like POST resource returns a success message
+     Failure/Error: expect(response['message']).to eql("#{titleized_resource(resource_name)} successfully created")
+       
+       expected: "Data Transfer successfully created"
+            got: nil
+       
+  16) OiApi::Client::DataTransfers#create_data_transfer it should behave like POST resource returns 201 created
+     Failure/Error: expect(response.code).to eql 201
+       
+       expected: 201
+            got: 200
+       
+  17) OiApi::Client::Advertisers#advertiser it should behave like GET resource when advertiser_id not found returns not found error message
+     Failure/Error: expect(not_found_response['message']).to eql 'Record not found'
+       
+       expected: "Record not found"
+            got: "No permission to view advertiser."
+       
+  18) OiApi::Client::Advertisers#advertiser it should behave like GET resource when advertiser_id not found returns 404
+     Failure/Error: expect(not_found_response.code).to eql 404
+       
+       expected: 404
+            got: 400
+       
+  19) OiApi::Client::Advertisers#update_advertiser it should behave like PUT resource returns the correct message
+     Failure/Error: expect(response['message']).to eql("#{titleized_resource(resource_name)} successfully updated")
+       
+       expected: "Advertiser successfully updated"
+            got: nil
+       
+  20) OiApi::Client::Advertisers#update_advertiser it should behave like PUT resource returns the correct status
+     Failure/Error: expect(response['status']).to eql('Request Successful')
+       
+       expected: "Request Successful"
+            got: "Update Successful"
+       
+  21) OiApi::Client::Advertisers#update_advertiser it should behave like PUT resource when advertiser not found returns not found error message
+     Failure/Error: expect(not_found_response['message']).to eql "#{titleized_resource(resource_name)} not found"
+       
+       expected: "Advertiser not found"
+            got: "No permission to update advertiser."
+       
+  22) OiApi::Client::Advertisers#update_advertiser it should behave like PUT resource when advertiser not found returns 404
+     Failure/Error: expect(not_found_response.code).to eql 404
+       
+       expected: 404
+            got: 400
+       
+  23) OiApi::Client::Advertisers#delete_advertiser it should behave like DELETE resource deletes a data transfer
+     Failure/Error: expect(api.public_send(resource_name, resource_id).code).to eql 404
+       
+       expected: 404
+            got: 400
+       
+  24) OiApi::Client::Advertisers#delete_advertiser it should behave like DELETE resource when advertiser not found returns not found error message
+     Failure/Error: expect(not_found_response['message']).to eql 'Record not found'
+       
+       expected: "Record not found"
+            got: "Operation not allowed"
+       
+  25) OiApi::Client::Advertisers#delete_advertiser it should behave like DELETE resource when advertiser not found returns 404
+     Failure/Error: expect(not_found_response.code).to eql 404
+       
+       expected: 404
+            got: 403
+       
+  26) OiApi::Client::Advertisers#create_advertiser it should behave like POST resource returns a success status
+     Failure/Error: expect(response['status']).to eql('Request Successful')
+       
+       expected: "Request Successful"
+            got: "Create Successful"
+       
+  27) OiApi::Client::Offers#offer it should behave like GET resource when offer_id not found returns not found error message
+     Failure/Error: expect(not_found_response['status']).to eql 'Retrieve Failed'
+       
+       expected: "Retrieve Failed"
+            got: "Permission Denied"
+       
+  28) OiApi::Client::Offers#offer it should behave like GET resource when offer_id not found returns not found error message
+     Failure/Error: expect(not_found_response['message']).to eql 'Record not found'
+       
+       expected: "Record not found"
+            got: "You do not have permission to perform this action."
+
+  29) OiApi::Client::Offers#offer it should behave like GET resource when offer_id not found returns 404
+     Failure/Error: expect(not_found_response.code).to eql 404
+       
+       expected: 404
+            got: 403
+
+  30) OiApi::Client::Offers#update_offer it should behave like PUT resource returns the correct status
+     Failure/Error: expect(response['status']).to eql('Request Successful')
+       
+       expected: "Request Successful"
+            got: "Request Succesful"
