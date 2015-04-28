@@ -1,5 +1,3 @@
-## Need test card numbers for proper testing of POST /advertisers/123/cards/
-
 ## Soft deleting advertisers?
 
 Creating an advertiser, then deleting it, then attempting to create another advertiser with the same name results in a validation error. I suspect that DELETEs via the API are soft deletes and then validation is being triggered by the soft deleted records. 
@@ -28,6 +26,8 @@ This is a problem when trying to run automated tests against the API. Ideally, e
   >> api.create_advertiser('name': 'test advertiser', status_id: 1, category_id: 1010)
   => {"status"=>"Create Failed", "message"=>"Name exists"}
 ```
+
+## Need test card numbers for proper testing of POST, PUT /advertisers/123/cards/
 
 ## HTTP Status codes inconsistent when a resource doesn't exist
 
