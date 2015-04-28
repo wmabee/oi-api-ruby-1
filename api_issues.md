@@ -1,5 +1,5 @@
 ## Soft deleting advertisers?
-
+### You are correct.  Our delete is "soft".  It does create quite a few records on our end, but we have some methods of handling.
 Creating an advertiser, then deleting it, then attempting to create another advertiser with the same name results in a validation error. I suspect that DELETEs via the API are soft deletes and then validation is being triggered by the soft deleted records. 
 
 This is a problem when trying to run automated tests against the API. Ideally, each individual test would involve a full setup and breakdown of test records. The problem described above forces the use of a long random string for the name field (to minimize chance of name reuse) and is undoubtedly creating a ton of records upstream.
@@ -26,6 +26,7 @@ This is a problem when trying to run automated tests against the API. Ideally, e
   >> api.create_advertiser('name': 'test advertiser', status_id: 1, category_id: 1010)
   => {"status"=>"Create Failed", "message"=>"Name exists"}
 ```
+
 
 ## Need test card numbers for proper testing of POST, PUT /advertisers/123/cards/
 
@@ -82,6 +83,7 @@ The API should return all offers when performing a GET to /offers/ but should re
 when POSTing to /offers/123/ the "status" param returned has a typo: "Request Succesful" should be "Request Successful"
 
 ## Are DELETE requests not allowed for offers?
+### That is correct.  We do not have a DELETE for offers currently.
 
 ## Data transfers POST params redundancy
 
