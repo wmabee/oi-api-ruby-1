@@ -1,3 +1,5 @@
+## Need test card numbers for proper testing of POST /advertisers/123/cards/
+
 ## Soft deleting advertisers?
 
 Creating an advertiser, then deleting it, then attempting to create another advertiser with the same name results in a validation error. I suspect that DELETEs via the API are soft deletes and then validation is being triggered by the soft deleted records. 
