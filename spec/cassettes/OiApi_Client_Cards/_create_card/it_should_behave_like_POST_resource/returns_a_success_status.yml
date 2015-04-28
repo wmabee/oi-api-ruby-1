@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
+    body:
+      encoding: UTF-8
+      string: '{"name":"new advertiser 0746545975c9e21446173d1e41225779","status_id":1,"category_id":1010}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:00:51 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Create Successful", "message": "Advertiser successfully
+        created", "id": 40589}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:01:59 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40589/cards/
+    body:
+      encoding: UTF-8
+      string: '{"number":9819465435,"exp_month":12,"exp_year":16,"cvc":111,"name":"John
+        Tester","address_line1":"123 Elm Street","address_line2":"Apt 2","address_city":"Rochester","address_zip":14605,"address_state":"NY","address_country":"US","default":"true"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:00:52 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, DELETE, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Request Failed", "message": "Your card number is incorrect.",
+        "error_code": "incorrect_number", "error": true}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:02:00 GMT
+recorded_with: VCR 2.9.3

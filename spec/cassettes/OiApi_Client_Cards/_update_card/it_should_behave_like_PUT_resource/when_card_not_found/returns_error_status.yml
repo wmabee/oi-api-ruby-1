@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
+    body:
+      encoding: UTF-8
+      string: '{"name":"new advertiser 2776e020f79f71d033d33ca80f25f5e0","status_id":1,"category_id":1010}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:02:25 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Create Successful", "message": "Advertiser successfully
+        created", "id": 40605}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:03:32 GMT
+- request:
+    method: put
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40605/cards/99999999999999/
+    body:
+      encoding: UTF-8
+      string: '{"address_zip":11211}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 404
+      message: NOT FOUND
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:02:25 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, PUT, DELETE, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Request Failed", "message": "Card not found.", "error":
+        true}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:03:33 GMT
+recorded_with: VCR 2.9.3

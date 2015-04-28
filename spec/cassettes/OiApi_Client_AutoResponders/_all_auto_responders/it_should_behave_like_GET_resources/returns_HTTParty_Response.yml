@@ -1,0 +1,593 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:29 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '[{"id": 40693, "name": "new advertiser 9c7304d7613d0ed7668f05d5987b9762",
+        "status_id": 1, "category_id": 1010, "key": "", "create_date": "2015-04-28T17:44:30",
+        "modify_date": "2015-04-28T17:44:30"}, {"id": 40694, "name": "new advertiser
+        f88a42c579be03a9754317d2f78d38f7", "status_id": 1, "category_id": 1010, "key":
+        "", "create_date": "2015-04-28T17:44:32", "modify_date": "2015-04-28T17:44:32"},
+        {"id": 40695, "name": "new advertiser 3ec2699b15198782cdd13d2d17de77c3", "status_id":
+        1, "category_id": 1010, "key": "", "create_date": "2015-04-28T17:44:34", "modify_date":
+        "2015-04-28T17:44:34"}]'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:37 GMT
+- request:
+    method: delete
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40693/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:30 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, PUT, DELETE, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
+        deleted"}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:37 GMT
+- request:
+    method: delete
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40694/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:30 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, PUT, DELETE, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
+        deleted"}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:37 GMT
+- request:
+    method: delete
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/40695/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:30 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, PUT, DELETE, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Delete Successful", "message": "Advertiser Succesfully
+        deleted"}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:38 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:31 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:38 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
+    body:
+      encoding: UTF-8
+      string: '{"name":"new advertiser 66aa581fa8e80098a135fb8b06776167","status_id":1,"category_id":1010}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:31 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Create Successful", "message": "Advertiser successfully
+        created", "id": 40696}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:38 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
+    body:
+      encoding: UTF-8
+      string: '{"advertiser_id":40696,"name":"Special Product 111bbd9d2c95394c520bf38ae5ffbaf2","category_id":1010,"status_id":9,"headline":"Buy
+        our product today f3315b744c290b51b2b632347a1128c0","body":"Try for FREE for
+        a limited time only. This is your one-and-only chance! 35681cca70bf8ebe948640a4e3771bed","cpl_price":1.0,"global_cap":1000,"monthly_cap":300,"daily_cap":10,"image1":"http://www.opt-intelligence.com/images/cats120.png","image2":"http://www.opt-intelligence.com/images/cats88.png","data_points":["EM","FN"],"targeting":{"min_age":18,"max_age":45,"zip":{"include":true,"zip_codes":["14226","10009","10023","11211"]},"gender":"m","country":{"include":true,"countries":["USA"]},"third_party":{}},"comment":"Hello
+        there"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:31 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Request Successful", "message": "Offer successfully created",
+        "id": 80012}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:40 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/80012/autoresponders/
+    body:
+      encoding: UTF-8
+      string: '{"status_id":1,"subject":"Here''s a good subject line","from_name":"Our
+        Company","body_html":"some html here","body_text":"some text here"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:32 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Create Successful", "id": 53580}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:40 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
+    body:
+      encoding: UTF-8
+      string: '{"name":"new advertiser eda1620f7db927fd3fc58b8dc272f4fb","status_id":1,"category_id":1010}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:33 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Create Successful", "message": "Advertiser successfully
+        created", "id": 40697}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:40 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
+    body:
+      encoding: UTF-8
+      string: '{"advertiser_id":40697,"name":"Special Product 69b027aab95d77fbdee4c8757163c7b4","category_id":1010,"status_id":9,"headline":"Buy
+        our product today b8ca972df5fa023020321f27b38a56c8","body":"Try for FREE for
+        a limited time only. This is your one-and-only chance! 54c39831d7ca95ae597e116122d6ba8b","cpl_price":1.0,"global_cap":1000,"monthly_cap":300,"daily_cap":10,"image1":"http://www.opt-intelligence.com/images/cats120.png","image2":"http://www.opt-intelligence.com/images/cats88.png","data_points":["EM","FN"],"targeting":{"min_age":18,"max_age":45,"zip":{"include":true,"zip_codes":["14226","10009","10023","11211"]},"gender":"m","country":{"include":true,"countries":["USA"]},"third_party":{}},"comment":"Hello
+        there"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:33 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Request Successful", "message": "Offer successfully created",
+        "id": 80013}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:42 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/80013/autoresponders/
+    body:
+      encoding: UTF-8
+      string: '{"status_id":1,"subject":"Here''s a good subject line","from_name":"Our
+        Company","body_html":"some html here","body_text":"some text here"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:35 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Create Successful", "id": 53581}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:42 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/advertisers/
+    body:
+      encoding: UTF-8
+      string: '{"name":"new advertiser 3913c906faa264949c33439a37b64cef","status_id":1,"category_id":1010}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:35 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Create Successful", "message": "Advertiser successfully
+        created", "id": 40698}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:42 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/
+    body:
+      encoding: UTF-8
+      string: '{"advertiser_id":40698,"name":"Special Product ea172f803326f6cf413d2763a927283c","category_id":1010,"status_id":9,"headline":"Buy
+        our product today 43db5403a0b6ee91e5c21431f5837e17","body":"Try for FREE for
+        a limited time only. This is your one-and-only chance! a28a4da6cab4ed66b683f637aba78726","cpl_price":1.0,"global_cap":1000,"monthly_cap":300,"daily_cap":10,"image1":"http://www.opt-intelligence.com/images/cats120.png","image2":"http://www.opt-intelligence.com/images/cats88.png","data_points":["EM","FN"],"targeting":{"min_age":18,"max_age":45,"zip":{"include":true,"zip_codes":["14226","10009","10023","11211"]},"gender":"m","country":{"include":true,"countries":["USA"]},"third_party":{}},"comment":"Hello
+        there"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:35 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Request Successful", "message": "Offer successfully created",
+        "id": 80014}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:44 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/offers/80014/autoresponders/
+    body:
+      encoding: UTF-8
+      string: '{"status_id":1,"subject":"Here''s a good subject line","from_name":"Our
+        Company","body_html":"some html here","body_text":"some text here"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:37 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "Create Successful", "id": 53582}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:44 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/autoresponders/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 21:43:37 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '[{"id": 53580, "subject": "Here''s a good subject line", "offer_id":
+        80012, "from_name": "Our Company", "status_id": 1, "body_text": "some text
+        here", "body_html": "some html here"}, {"id": 53581, "subject": "Here''s a
+        good subject line", "offer_id": 80013, "from_name": "Our Company", "status_id":
+        1, "body_text": "some text here", "body_html": "some html here"}, {"id": 53582,
+        "subject": "Here''s a good subject line", "offer_id": 80014, "from_name":
+        "Our Company", "status_id": 1, "body_text": "some text here", "body_html":
+        "some html here"}]'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 21:44:44 GMT
+recorded_with: VCR 2.9.3

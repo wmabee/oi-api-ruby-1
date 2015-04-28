@@ -27,7 +27,7 @@ module DataTransfersFactory
   end
 
   def create_data_transfer(params = {})
-    _params = valid_data_transfer_params.merge(params)
+    _params = valid_data_transfer_params(params)
     api_client.create_data_transfer(_params[:offer_id], _params)
   end
 
