@@ -1,4 +1,4 @@
-RSpec.shared_examples 'POST resource' do |resource_name|
+RSpec.shared_examples 'POST resource' do |resource_name, options|
 
   it 'returns a success message' do
     expect(response['message']).to eql("#{titleized_resource(resource_name)} successfully created")

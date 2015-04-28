@@ -25,7 +25,7 @@ RSpec.describe OiApi::Client::Advertisers do
 
     let(:response) { api.advertisers }
 
-    it_should_behave_like 'GET resources', :advertiser
+    it_should_behave_like 'GET resources', :advertiser, { expected_num_resources: 2 }
 
   end
 

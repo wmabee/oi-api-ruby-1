@@ -67,6 +67,10 @@ More appropriate and consistent would be:
   * message: 'Record not found'
   * status: 'error'
 
+# DataTransfer messaging
+
+In some places "Data Transfer" is returned in messages, but in others "DataTransfer" is returned. This should probably be consistent.
+
 ## Consider nesting and scoping offers under advertisers (ie: /advertisers/123/offers/)
 
 The API should return all offers when performing a GET to /offers/ but should return only offers for a given advertiser when scoped by advertiser_id (GET /advertisers/123/offers/).

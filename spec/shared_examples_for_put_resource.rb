@@ -1,4 +1,4 @@
-RSpec.shared_examples 'PUT resource' do |resource_name|
+RSpec.shared_examples 'PUT resource' do |resource_name, options|
 
   it "returns the correct status" do
     expect(response['status']).to eql('Request Successful')

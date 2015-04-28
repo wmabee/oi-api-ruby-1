@@ -1,4 +1,4 @@
-RSpec.shared_examples 'GET resources' do |resource_name|
+RSpec.shared_examples 'GET resources' do |resource_name, options|
 
   it 'returns 200 OK' do
     expect(response.code).to eql 200
@@ -9,7 +9,7 @@ RSpec.shared_examples 'GET resources' do |resource_name|
   end
 
   it 'returns all resources' do
-    expect(response.size).to eql 2
+    expect(response.size).to eql options[:expected_num_resources]
   end
 
 end

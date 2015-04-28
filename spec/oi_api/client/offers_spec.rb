@@ -27,7 +27,7 @@ RSpec.describe OiApi::Client::Offers do
 
     let(:response) { api.offers }
 
-    it_should_behave_like 'GET resources', :offer
+    it_should_behave_like 'GET resources', :offer, { expected_num_resources: 2 }
 
   end
 

@@ -56,5 +56,5 @@ RSpec.configure do |config|
 end
 
 def titleized_resource(resource_name)
-  resource_name.to_s.split('_').map(&:capitalize).join(' ')
+  resource_name.to_s.split('_').map(&:capitalize).join
 end

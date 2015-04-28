@@ -1,4 +1,4 @@
-RSpec.shared_examples 'DELETE resource' do |resource_name|
+RSpec.shared_examples 'DELETE resource' do |resource_name, options|
 
   it 'returns the correct message' do
     expect(response['message']).to eql("#{titleized_resource(resource_name)} Succesfully deleted")

@@ -28,7 +28,7 @@ RSpec.describe OiApi::Client::DataTransfers do
 
     let(:response) { api.data_transfers }
 
-    it_should_behave_like 'GET resources', :data_transfer
+    it_should_behave_like 'GET resources', :data_transfer, { expected_num_resources: 2 }
 
   end
 

@@ -1,12 +1,8 @@
 require 'spec_helper'
 
-require 'shared_examples_for_get_resource.rb'
 require 'shared_examples_for_get_resources.rb'
-require 'shared_examples_for_post_resource.rb'
-require 'shared_examples_for_put_resource.rb'
-require 'shared_examples_for_delete_resource.rb'
 
-RSpec.describe OiApi::Client::Reports, :focus do
+RSpec.describe OiApi::Client::Reports do
 
   let(:api) { Factory.api_client }
   let(:advertiser) { Factory.create_advertiser }
@@ -15,7 +11,7 @@ RSpec.describe OiApi::Client::Reports, :focus do
 
     let(:response) { api.reports }
 
-    it_should_behave_like 'GET resources', :report
+    it_should_behave_like 'GET resources', :report, { expected_num_resources: 2 }
 
     it 'returns a report summary' do
       expect(response['data'].keys).to eql ['today', 'yesterday', 'mtd']
