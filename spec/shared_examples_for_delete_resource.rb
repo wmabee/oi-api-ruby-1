@@ -1,7 +1,7 @@
 RSpec.shared_examples 'DELETE resource' do |resource_name|
 
   it 'returns the correct message' do
-    expect(response['message']).to eql("#{resource_name.capitalize} Succesfully deleted")
+    expect(response['message']).to eql("#{titleized_resource(resource_name)} Succesfully deleted")
   end
 
   it 'returns the correct status' do

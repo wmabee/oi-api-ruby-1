@@ -1,7 +1,7 @@
 RSpec.shared_examples 'POST resource' do |resource_name|
 
   it 'returns a success message' do
-    expect(response['message']).to eql("#{resource_name.capitalize} successfully created")
+    expect(response['message']).to eql("#{titleized_resource(resource_name)} successfully created")
   end
 
   it 'returns a success status' do

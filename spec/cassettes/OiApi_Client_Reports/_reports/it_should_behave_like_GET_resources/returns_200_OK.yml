@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@oiapi.com/v1/reports/advertisers/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OiApiRuby Gem 0.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 17:26:15 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept,Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Allow:
+      - GET, HEAD, OPTIONS
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"status": "ok", "data": {"today": [{"DELIVERED": 0, "TOTAL_COST":
+        0, "AVG_CPL": 0, "EMAIL_SENT": 0, "OPT_INS": 0, "OPN_DLVRD": 0, "VALID_OPT_INS":
+        0, "CLICKS": 0, "OPENS": 0, "CLK_OPN": 0}], "yesterday": [{"DELIVERED": 0,
+        "TOTAL_COST": 0, "AVG_CPL": 0, "EMAIL_SENT": 0, "OPT_INS": 0, "OPN_DLVRD":
+        0, "VALID_OPT_INS": 0, "CLICKS": 0, "OPENS": 0, "CLK_OPN": 0}], "mtd": [{"DELIVERED":
+        0, "TOTAL_COST": 0, "AVG_CPL": 0, "EMAIL_SENT": 0, "OPT_INS": 0, "OPN_DLVRD":
+        0, "VALID_OPT_INS": 0, "CLICKS": 0, "OPENS": 0, "CLK_OPN": 0}]}}'
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 17:27:46 GMT
+recorded_with: VCR 2.9.3

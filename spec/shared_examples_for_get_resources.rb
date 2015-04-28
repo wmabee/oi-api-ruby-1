@@ -5,7 +5,7 @@ RSpec.shared_examples 'GET resources' do |resource_name|
   end
 
   it 'returns HTTParty::Response' do
-    expect(response).to be_instance_of Array
+    expect(response.class).to eql HTTParty::Response
   end
 
   it 'returns all resources' do

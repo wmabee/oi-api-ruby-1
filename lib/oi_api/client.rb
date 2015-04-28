@@ -78,6 +78,7 @@ module OiApi
 
     def options_with_basic_auth(options = {})
       headers = options.has_key?(:headers) ? options.delete(:headers) : {}
+      query_string = options.has_key?(:query) ? options.delete(:query) : {}
       body = options
 
       _options = {
@@ -87,6 +88,7 @@ module OiApi
 
       _options[:debug_output] = debug_output if debug_output
       _options[:body] = body.to_json unless body.empty?
+      _options[:query] = query_string unless query_string.empty?
 
       _options
     end

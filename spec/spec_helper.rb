@@ -55,3 +55,6 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 end
 
+def titleized_resource(resource_name)
+  resource_name.to_s.split('_').map(&:capitalize).join(' ')
+end

@@ -5,7 +5,7 @@ RSpec.shared_examples 'PUT resource' do |resource_name|
   end
 
   it "returns the correct message" do
-    expect(response['message']).to eql("#{resource_name.capitalize} successfully updated")
+    expect(response['message']).to eql("#{titleized_resource(resource_name)} successfully updated")
   end
 
   it 'returns 200 OK' do
@@ -34,8 +34,7 @@ RSpec.shared_examples 'PUT resource' do |resource_name|
     end
 
     it 'returns not found error message' do
-      titleized_resource = resource_name.to_s.split('_').map(&:capitalize).join(' ')
-      expect(not_found_response['message']).to eql "#{titleized_resource} not found"
+      expect(not_found_response['message']).to eql "#{titleized_resource(resource_name)} not found"
     end
 
     it 'returns error status' do
